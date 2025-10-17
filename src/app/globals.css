@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display&family=Roboto&display=swap');
+
+
+.absolute-center{
+  top: 46%;
+  left: 50%;
+  transform: translate(-44%, -50%);
+
+  @media screen and (max-width: 600px) {
+    transform: none;
+  }
+  
+}
+
+*{
+  font-family:  var(--font-roboto);
+  box-sizing: border-box;
+}
+
+.bz{
+  font-weight: 500;
+  font-size: 14px;
+}
+
+p{
+  font-size: 16px;
+  line-height: 28.8px;
+}
+
+body{
+  overflow-x: hidden;
+}
+
+.bigText{
+  font-family: var(--font-noto);
+  /* @apply font-serif */
+font-weight: 400;
+/* line-height: 77px; */
+letter-spacing: -0.005em;
+
+}
+
+.bigText300{
+  font-family: var(--font-noto);
+  /* @apply font-serif */
+font-weight: 300;
+/* line-height: 77px; */
+letter-spacing: -0.005em;
+
+}
+
+.bts{
+/* font-size: 48px; */
+font-weight: 400;
+line-height: 62px;
+letter-spacing: 0em;
+text-align: left;
+}
+.cc{
+  clip-path: circle();
+}
+
+form {
+  @apply w-full flex flex-col gap-3
+}
+
+form > div {
+  @apply flex flex-col gap-2 w-full
+}
+
+form > div > input, textarea {
+  @apply w-full border-2 border-black h-10 p-5 resize-none
+}
+
+.btn{
+  @apply flex flex-row cursor-pointer
+}
+
+.btm{
+  background-image: url(../../public/bg-bg.png);
+}
+
+@media screen and (max-width: 800px) {
+  .fs{
+    background-image: url(../../public/mide-fs.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    @apply flex items-center justify-center py-20
+    /* height: 40px; */
+    /* background-color: red; */
+  }
+  
+  .fs > .content{
+    @apply text-center w-full px-xPadding
+  
+  }
+  
+  .fs2{
+    background-image: url(../../public/mide-fs2.png); 
+  }
+
+  .btm{
+    @apply py-[80px]
+  }
+
+  /* .fs-s */
+
+  .my-yPadding{
+    @apply my-[40px]
+  }
+
+  .py-yPadding{
+    @apply py-[40px]
+  }
+  
+}
+
+.hover:hover{
+  transition: all .3s;
+  @apply bg-white text-black
+}
+
+img{
+  /* width: 100%; */
+}
+.hover-black:hover{
+  transition: all .3s;
+  @apply bg-black text-white
+}
