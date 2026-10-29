@@ -1,7 +1,14 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { RiArrowRightLine } from 'react-icons/ri'
 import { SiInstagram, SiLinkedin, SiPinterest } from 'react-icons/si'
+import f1 from '../../public/f1.jpg'
+import f2 from '../../public/f2.jpg'
+import f3 from '../../public/f3.jpg'
+import f4 from '../../public/f4.jpg'
+import f5 from '../../public/f5.jpg'
+import f6 from '../../public/f6.jpg'
 
 const Footer = ({showPinterest = true}) => {
     const nav = [
@@ -28,7 +35,7 @@ const Footer = ({showPinterest = true}) => {
     ]
 
     const images = [
-        "./f1.png", "./f2.png", "./f3.png", "f4.png", "f5.png", "./f6.png"
+        f1, f2, f3, f4, f5, f6
     ]
 
     const social = [
@@ -65,7 +72,7 @@ const Footer = ({showPinterest = true}) => {
                 {
                     images.map((im, i)=>{
                         return(
-                            <img src={im} key={i} alt="" className='w-full md:h-full'/>
+                            <Image src={im} key={i} alt="" className='w-full md:h-full' sizes="(max-width: 800px) 33vw, 16vw"/>
                         )
                     })
                 }

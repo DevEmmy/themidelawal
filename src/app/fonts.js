@@ -1,4 +1,4 @@
-import { Inter, Noto_Sans, Noto_Serif, Noto_Serif_Display, Roboto } from 'next/font/google'
+import { Noto_Serif_Display, Roboto } from 'next/font/google'
 
-export const roboto = Roboto({ subsets: ['latin'], weight: ["100", "300", "400", "500", "700", "900"], variable: "--font-roboto", display: "swap" })
-export const noto = Noto_Serif_Display({ subsets: ['latin'], variable: "--font-noto", display: "swap" }) 
+export const roboto = Roboto({ subsets: ['latin'], weight: ["300", "400", "500", "700"], variable: "--font-roboto", display: "swap" })
+export const noto = Noto_Serif_Display({ subsets: ['latin'], variable: "--font-noto", display: "swap" })

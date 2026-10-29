@@ -1,8 +1,9 @@
-"use client";
 import Footer from "../../components/Footer";
 import NavBar from "../../components/NavBar";
 import Image from "next/image";
 import React from "react";
+import contact from "../../../public/contact.webp";
+import kwBig from "../../../public/kw-big.webp";
 
 const page = () => {
   return (
@@ -10,7 +11,7 @@ const page = () => {
       <NavBar active={5} />
 
       <div className="bg-[#F8F6F4]">
-        <img src="./contact.png" alt="" className="relative w-full" />
+        <Image src={contact} alt="" className="relative w-full h-auto" priority sizes="100vw" />
 
         <div className="absolute top-[458px] md:top-[200px] sm:top-[153px] md:left-xPadding md:right-xPadding  md:px-xPadding left-32 right-32 bg-white flex gap-5 items-center justify-center flex-col py-[40px] md:py-[32px] px-xPadding">
           <h2 className="text-center bigText300 text-[80px] md:text-[40px] font-[300] leading-[60px] md:leading-[30px]">
@@ -52,7 +53,7 @@ const page = () => {
           </p>
         </div>
 
-        <Image unoptimized width={1000} height={1000} className="w-full object-cover"  src="/./kw-big.png" alt="" />
+        <Image className="w-full h-auto object-cover" src={kwBig} alt="" sizes="(max-width: 800px) 100vw, 50vw" />
       </div>
 
       <Footer />

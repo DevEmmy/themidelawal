@@ -88,7 +88,7 @@ const Tools = () => {
         let flag = false;
         // let i = 1
 
-        setInterval(()=>{
+        const desktopTimer = setInterval(()=>{
             if(!flag){
                 setTools(sTools2)
                 flag = true
@@ -100,7 +100,7 @@ const Tools = () => {
         }, 2000)
 
         let i = 0;
-        setInterval(()=>{
+        const mobileTimer = setInterval(()=>{
             if(i == 0){
                 setM(mTools.slice(2,4))
                 i = 1
@@ -115,7 +115,10 @@ const Tools = () => {
             }
         }, 2000)
 
-
+        return ()=>{
+            clearInterval(desktopTimer)
+            clearInterval(mobileTimer)
+        }
     }, [])
   return (
     <div className='flex bg-[#E6E1DB] md:flex-col md:gap-[20px]   px-[10%] md:px-[5%] py-5 md:py-[15px] justify-between'>
