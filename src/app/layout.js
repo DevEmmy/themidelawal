@@ -2,6 +2,7 @@ import './globals.css'
 import { roboto, noto } from './fonts'
 
 export const metadata = {
+  metadataBase: new URL('https://www.themidelawal.com'),
   title: 'THE MIDE LAWAL & CO.',
   description: 'Creating A Seamless Entrepreneurial Experience Through Support, Structure And Strategy',
   openGraph: {
@@ -9,9 +10,9 @@ export const metadata = {
     description: 'Creating A Seamless Entrepreneurial Experience Through Support, Structure And Strategy',
     images: [
       {
-        url: '/homepage.png',
-        width: 1200,
-        height: 630,
+        url: '/homepage.jpg',
+        width: 1834,
+        height: 1166,
         alt: 'The Mide Lawal & Co.',
       },
     ],
@@ -21,7 +22,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'THE MIDE LAWAL & CO.',
     description: 'Creating A Seamless Entrepreneurial Experience Through Support, Structure And Strategy',
-    images: ['/homepage.png'],
+    images: ['/homepage.jpg'],
   },
 }
 

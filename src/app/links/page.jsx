@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { RiArrowRightLine } from 'react-icons/ri'
+import homepage from '../../../public/homepage.jpg'
 
 const page = () => {
 
@@ -30,7 +31,7 @@ const page = () => {
   return (
     <div className=''>
         <div className="">
-            <Image src="/./homepage.png" alt="" className="relative w-full object-cover" width={2000} height={2000} unoptimized/>
+            <Image src={homepage} alt="" className="relative w-full h-auto object-cover" priority placeholder="blur" sizes="100vw"/>
 
             <div className="absolute top-[458px] md:top-[200px] sm:top-[153px] md:left-xPadding md:right-xPadding  md:px-xPadding left-32 right-32 bg-white flex gap-5 items-center justify-center flex-col py-[40px] md:py-[32px] px-xPadding">
                 <h2 className="text-center bigText300 text-[80px] md:text-[40px] font-[300] leading-[60px] md:leading-[30px]">

@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display&family=Roboto&display=swap');
-
 
 .absolute-center{
   top: 46%;
@@ -81,12 +79,12 @@ form > div > input, textarea {
 }
 
 .btm{
-  background-image: url(../../public/bg-bg.png);
+  background-image: url(../../public/bg-bg.jpg);
 }
 
 @media screen and (max-width: 800px) {
   .fs{
-    background-image: url(../../public/mide-fs.png);
+    background-image: url(../../public/mide-fs.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     @apply flex items-center justify-center py-20
@@ -100,7 +98,7 @@ form > div > input, textarea {
   }
   
   .fs2{
-    background-image: url(../../public/mide-fs2.png); 
+    background-image: url(../../public/mide-fs2.jpg); 
   }
 
   .btm{

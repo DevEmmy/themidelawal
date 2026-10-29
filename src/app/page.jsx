@@ -8,6 +8,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { RiArrowRightLine } from "react-icons/ri"
 import Footer from '../components/Footer'
+import dap1 from '../../public/DAP1.jpg'
+import bj from '../../public/bj.jpg'
+import mideLong from '../../public/mide-long.jpg'
+import mideFooter from '../../public/mide-footer.jpg'
 
 export default function Home() {
   return (
@@ -17,7 +21,7 @@ export default function Home() {
 
       <div className="bg-primary2 mt-[120px] md:mt-[30px] py-[120px] md:py-[60px] px-xPadding md:text-center">
       <TwoWay>
-        <Image src="/./DAP1.jpg" alt="" className='w-full h-auto' unoptimized width={1000} height={1000}/>
+        <Image src={dap1} alt="" className='w-full h-auto' placeholder="blur" sizes="(max-width: 800px) 100vw, 45vw"/>
 
         <div className='flex flex-col gap-5'>
           <h2 className='bigText text-[48px] md:text-[32px] font-regular md:text-center bts leading-[62.4px] md:leading-[37px]'>
@@ -64,13 +68,13 @@ export default function Home() {
           </p>
         </div>
 
-        <Image src="/./bj.png" alt="" width={500} height={500} className='w-full' unoptimized/>
+        <Image src={bj} alt="" className='w-full h-auto' placeholder="blur" sizes="(max-width: 800px) 100vw, 50vw"/>
       </div>
 
 
       <div className="my-yPadding px-xPadding md:px-[5%]">
       <TwoWay>
-        <Image src="/./mide-long.png" alt="" className='w-full h-[800px] object-cover' width={1000} height={1000} unoptimized/>
+        <Image src={mideLong} alt="" className='w-full h-[800px] object-cover' placeholder="blur" sizes="(max-width: 800px) 100vw, 45vw"/>
 
         <div className='flex flex-col gap-[40px] justify-between md:text-center w-[500px] md:w-full'>
           
@@ -104,7 +108,7 @@ export default function Home() {
       </div>
 
       <div className='relative md:fs md:static fs'>
-        <Image src="/./mide-footer.png" alt="" className='md:hidden w-full h-[500px] object-cover object-top' width={1000} height={1000} unoptimized/>
+        <Image src={mideFooter} alt="" className='md:hidden w-full h-[500px] object-cover object-top' placeholder="blur" sizes="100vw"/>
 
         <div className="content absolute md:static bottom-28 left-[10%] text-white w-2/5 flex gap-[40px] flex-col md:gap-[32px]">
           <div className='flex flex-col gap-3'>

@@ -1,5 +1,3 @@
-const { Noto_Serif, Roboto } = require('next/font/google')
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [

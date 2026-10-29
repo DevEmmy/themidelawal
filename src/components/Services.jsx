@@ -2,6 +2,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState, useRef } from 'react'
+import p1 from '../../public/p1.jpg'
+import p2 from '../../public/p2.jpg'
+import p3 from '../../public/p3.jpg'
+import p4 from '../../public/p4.jpg'
+import p6 from '../../public/p6.JPG'
 import { RiArrowRightLine, RiArrowLeftLine } from 'react-icons/ri'
 
 const Services = () => {
@@ -11,27 +16,27 @@ const Services = () => {
 
     const services = [
         {
-            image: "./p1.jpg",
+            image: p1,
             headText: "Business Support Retainer",
             text: "This high-touch retainer is designed for founders who need consistent, professional support with running their backend operations."
         },
         {
-            image: "./p2.jpg",
+            image: p2,
             headText: "Business Systems Build-Out",
             text: "If you're overwhelmed by scattered systems, no clear workflows, or a backend that doesn't support your growth—this is for you."
         },
         {
-            image: "./p3.jpg",
+            image: p3,
             headText: "Systems Wipe",
             text: 'If your business backend feels chaotic, bloated, or just "not working anymore," this is your clean slate.'
         },
         {
-            image: "./p4.jpg",
+            image: p4,
             headText: "Systems Audit & Action Plan",
             text: 'This is the perfect offer for founders who feel something\'s off in their backend—but can\'t quite put their finger on it.'
         },
         {
-            image: "./p6.JPG",
+            image: p6,
             headText: "Program | Offer Launch Support",
             text: 'This one-time, project-based service is perfect for entrepreneurs preparing for a major launch and need an expert to manage all the operational moving pieces.'
         }
@@ -98,10 +103,9 @@ const Services = () => {
                     {services.map((service, i) => (
                         <div key={i} className='p-3 bg-white flex flex-col gap-3 text-center max-w-[300px] md:max-w-[280px] flex-shrink-0'>
                             <Image 
-                                width={100} 
-                                height={100} 
-                                unoptimized 
-                                src={`/${service.image}`} 
+                                src={service.image} 
+                                sizes="300px"
+                                placeholder="blur"
                                 alt="" 
                                 className='object-cover w-full h-[300px]'
                             />

@@ -4,6 +4,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { RiArrowRightLine } from 'react-icons/ri'
+import bgCe from '../../../public/bg-ce.jpg'
+import mmCe from '../../../public/mm-ce.jpg'
+import saCe from '../../../public/sa-ce.webp'
+import kw from '../../../public/kw.jpg'
+import shakira from '../../../public/shakira.jpg'
+import ashleigh from '../../../public/ashleigh.jpg'
+import ex from '../../../public/ex.jpg'
 
 const page = () => {
   return (
@@ -19,7 +26,7 @@ const page = () => {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-none md:flex md:flex-col gap-[104px] md:gap-[30px] md:my-[0px] justify-center px-xPadding my-[60px]">
-            <img src="./bg-ce.png" alt="" />
+            <Image src={bgCe} alt="" priority sizes="(max-width: 800px) 100vw, 516px" />
 
             <div className='flex flex-col gap-5 text-center'>
                 <p>
@@ -54,11 +61,11 @@ const page = () => {
                 </div>
             </div>
 
-            <img src="./mm-ce.png" alt="" />
+            <Image src={mmCe} alt="" placeholder="blur" sizes="(max-width: 800px) 100vw, 516px" />
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-none gap-[104px] md:gap-[40px] md:flex md:flex-col justify-center px-xPadding my-yPadding md:my-[20px]">
-            <img src="./sa-ce.png" alt="" />
+            <Image src={saCe} alt="" sizes="(max-width: 800px) 100vw, 516px" />
 
             <div className='flex flex-col gap-5 md:text-center'>
                 <p>
@@ -87,11 +94,11 @@ const page = () => {
                 </div>
             </div>
 
-            <img src="./kw.png" alt="" />
+            <Image src={kw} alt="" placeholder="blur" sizes="(max-width: 800px) 100vw, 516px" />
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-none gap-[104px] md:gap-[40px] md:flex md:flex-col justify-center px-xPadding my-yPadding md:my-[20px]">
-            <Image width={1000} height={1000} unoptimized className='w-full h-full object-cover' src="/./shakira.png" alt="Shakira Hemphill" />
+            <Image className='w-full h-full object-cover' src={shakira} alt="Shakira Hemphill" placeholder="blur" sizes="(max-width: 800px) 100vw, 45vw" />
 
             <div className='flex flex-col gap-5 md:text-center'>
                 <p>
@@ -117,7 +124,7 @@ const page = () => {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-none gap-[104px] md:gap-[40px] md:flex md:flex-col justify-center px-xPadding my-yPadding md:my-[20px]">
-            <Image src="/./ashleigh.png" width={1000} height={1000} unoptimized alt="Ashleigh Chanél" />
+            <Image src={ashleigh} alt="Ashleigh Chanél" placeholder="blur" sizes="(max-width: 800px) 100vw, 691px" />
 
             <div className='flex flex-col gap-5 md:text-center'>
                 <p>Mide, MY Operations & Systems Specialist.</p>
@@ -147,7 +154,7 @@ const page = () => {
         </div>
 
         <div className='relative md:fs md:static fs'>
-        <Image src="/./ex.png" alt="" className='md:hidden w-full h-[500px] object-cover object-top' width={1000} height={1000} unoptimized/>
+        <Image src={ex} alt="" className='md:hidden w-full h-[500px] object-cover object-top' placeholder="blur" sizes="100vw"/>
 
         <div className="content absolute md:static bottom-28 left-xPadding text-white w-3/5 flex flex-col gap-[40px] md:gap-[32px]">
         <h2 className="text-[59px] md:text-[40px] bigText leading-[68px] md:leading-[40px]">
