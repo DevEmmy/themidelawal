@@ -6,6 +6,16 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { RiArrowRightLine, RiCheckDoubleLine } from "react-icons/ri";
+import dap3 from "../../../public/DAP3.jpg";
+import dap4 from "../../../public/DAP4.jpg";
+import services2 from "../../../public/services2.webp";
+import mm from "../../../public/mm.webp";
+import ex from "../../../public/ex.jpg";
+import p1 from "../../../public/p1.jpg";
+import p2 from "../../../public/p2.jpg";
+import p3 from "../../../public/p3.jpg";
+import p4 from "../../../public/p4.jpg";
+import p6 from "../../../public/p6.JPG";
 
 const page = () => {
   const serviceOfferings = [
@@ -26,7 +36,7 @@ const page = () => {
       ],
       investment: "Begins at $1000",
       cta: "Let's explore if this is the right fit",
-      image: "./p1.jpg"
+      image: p1
     },
     {
       id: "02",
@@ -45,7 +55,7 @@ const page = () => {
       investment: "$3,500",
       paymentPlan: "Payment Plan: 50% upfront | 50% at completion",
       cta: "Ready to build your dream backend?",
-      image: "./p2.jpg"
+      image: p2
     },
     {
       id: "03",
@@ -61,7 +71,7 @@ const page = () => {
       ],
       investment: "$2000",
       cta: "Let's bring order back to your business.",
-      image: "./p3.jpg"
+      image: p3
     },
     {
       id: "04",
@@ -77,7 +87,7 @@ const page = () => {
       investment: "$650",
       note: "(one-time fee)",
       cta: "Want clarity on your backend?",
-      image: "./p4.jpg"
+      image: p4
     },
     {
       id: "05",
@@ -95,7 +105,7 @@ const page = () => {
       ],
       investment: "Custom, based on scope and timeline",
       cta: "Ready to launch with confidence?",
-    image: "./p6.JPG"
+    image: p6
     }
   ];
 
@@ -127,7 +137,7 @@ const page = () => {
       <NavBar active={2} />
 
       <div className="grid grid-cols-2 gap-24 md:gap-10 items-center md:grid-cols-none">
-        <Image src="/./DAP3.jpg" alt="" className='w-full h-auto' unoptimized width={1000} height={1000}/>
+        <Image src={dap3} alt="" className='w-full h-auto' priority placeholder="blur" sizes="(max-width: 800px) 100vw, 50vw"/>
 
         <div className="md:text-center sm:px-xPadding md:px-[5%] md:pr-[5%] pr-[10%]">
           <h2 className="bigText text-[80px] md:text-[38px] leading-[92px] md:leading-[48px]">
@@ -151,7 +161,7 @@ const page = () => {
       <div className="bg-white py-yPadding  md:py-[40px]  px-xPadding sm:px-xPadding md:px-[5%] sm:text-center">
         <TwoWay>
           <div className="hidden md:block">
-            <Image src="/./DAP4.jpg" alt="" className='w-full h-auto' unoptimized width={1000} height={1000}/>
+            <Image src={dap4} alt="" className='w-full h-auto' placeholder="blur" sizes="100vw"/>
           </div>
 
           <div className="flex flex-col gap-5 md:text-center">
@@ -195,7 +205,7 @@ const page = () => {
           </div>
 
           <div className="md:hidden">
-            <Image src="/./services2.png" alt="" className='w-full h-auto' unoptimized width={1000} height={1000}/>
+            <Image src={services2} alt="" className='w-full h-auto' sizes="45vw"/>
           </div>
         </TwoWay>
       </div>
@@ -258,7 +268,7 @@ const page = () => {
                 </div>
 
                 <div className="">
-                  <Image src={`/${service.image}`} alt={service.title} className="w-full h-[800px] md:h-[400px] md:w-full object-cover " unoptimized width={1000} height={1000}/>
+                  <Image src={service.image} alt={service.title} className="w-full h-[800px] md:h-[400px] md:w-full object-cover " placeholder="blur" sizes="(max-width: 800px) 100vw, 45vw"/>
                 </div>
               </TwoWay>
             </div>
@@ -306,11 +316,11 @@ const page = () => {
           <p className="text-[24px] md:text-[18px]">MORENIKE MOLEHIN</p>
         </div>
 
-        <Image src="/./mm.png" alt="" className='w-full h-auto' unoptimized width={1000} height={1000}/>
+        <Image src={mm} alt="" className='w-full h-auto' sizes="(max-width: 800px) 100vw, 50vw"/>
       </div>
 
       <div className="relative md:fs md:static fs fs2 md:fs2">
-        <Image src="/./ex.png" alt="" className="md:hidden w-full h-auto" unoptimized width={1000} height={1000}/>
+        <Image src={ex} alt="" className="md:hidden w-full h-auto" placeholder="blur" sizes="100vw"/>
 
         <div className="content absolute  md:static bottom-28 left-xPadding text-white w-3/5 flex flex-col gap-[40px] md:gap-[32px]">
           <h2 className="text-[59px] md:text-[40px] bigText leading-[68px] md:leading-[48px]">

@@ -6,6 +6,12 @@ import { RiArrowRightLine } from 'react-icons/ri'
 import NavBar from '../../components/NavBar'
 import Footer from '../../components/Footer'
 import TwoWay from '../../components/TwoWay'
+import about from '../../../public/about.jpg'
+import dap2 from '../../../public/DAP2.jpg'
+import mideAbout1 from '../../../public/mide-about1.jpg'
+import sa from '../../../public/sa.webp'
+import fun from '../../../public/fun.webp'
+import mideFooter from '../../../public/mide-footer.jpg'
 
 const page = () => {
   return (
@@ -13,9 +19,9 @@ const page = () => {
         <NavBar active={1}/>
         
         <div className="grid grid-cols-3">
-            <Image src="/./about.jpg" alt="" className='w-full h-auto' unoptimized width={1000} height={1000}/>
-            <Image src="/./about.jpg" alt="" className='w-full h-auto' unoptimized width={1000} height={1000}/>
-            <Image src="/./about.jpg" alt="" className='w-full h-auto' unoptimized width={1000} height={1000}/>
+            <Image src={about} alt="" className='w-full h-auto' priority placeholder="blur" sizes="33vw"/>
+            <Image src={about} alt="" className='w-full h-auto' priority placeholder="blur" sizes="33vw"/>
+            <Image src={about} alt="" className='w-full h-auto' priority placeholder="blur" sizes="33vw"/>
         </div>
 
         <section className='text-center flex flex-col gap-3 justify-center items-center my-yPadding md:my-[40px] px-[10%] md:px-[4%]'>
@@ -39,7 +45,7 @@ const page = () => {
 
     <div className="bg-primary2 py-yPadding md:py-[40px] md:px-[5%] px-xPadding">
         <TwoWay>
-            <img src="./mide-about1.png" alt="" />
+            <Image src={mideAbout1} alt="" placeholder="blur" sizes="(max-width: 800px) 100vw, 480px"/>
 
             <div className='flex flex-col gap-5 md:text-center'>
             <h2 className='bigText text-[48px] md:text-[38px]'>
@@ -80,7 +86,7 @@ const page = () => {
             </p>
             </div>
 
-            <Image src="/./DAP2.jpg" alt="" className='w-full h-auto' unoptimized width={1000} height={1000}/>
+            <Image src={dap2} alt="" className='w-full h-auto' placeholder="blur" sizes="(max-width: 800px) 100vw, 45vw"/>
         </div>
       </div>
 
@@ -101,13 +107,13 @@ const page = () => {
           </p>
         </div>
 
-        <img src="./sa.png" alt="" />
+        <Image src={sa} alt="" sizes="(max-width: 800px) 100vw, 720px"/>
       </div>
 
       <div className="bg-white my-yPadding px-xPadding md:px-[5%]">
         <TwoWay>
 
-        <img src="./fun.png" alt="" />
+        <Image src={fun} alt="" sizes="(max-width: 800px) 100vw, 496px"/>
 
             <div className='flex flex-col gap-5 md:text-center'>
                 <h2 className="bigText text-[48px] md:text-[38px]">
@@ -138,7 +144,7 @@ const page = () => {
       </div>
 
       <div className='relative my-32 md:my-16 md:fs md:static fs'>
-        <img src="./mide-footer.png" alt="" className='md:hidden' />
+        <Image src={mideFooter} alt="" className='md:hidden' placeholder="blur" sizes="1440px"/>
 
         <div className="content absolute md:static bottom-28 left-[10%] text-white w-2/5 flex flex-col gap-[40px] md:gap-[20px]">
           <h2 className="text-[60px] bigText leading-[68px] md:leading-[40px] md:text-[40px]">

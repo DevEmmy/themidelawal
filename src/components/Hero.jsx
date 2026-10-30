@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
+import homepage from '../../public/homepage.jpg'
 
 const Hero = () => {
   return (
@@ -13,7 +14,7 @@ const Hero = () => {
     //     </div>
     // </div>
     <div className='w-full h-auto'>
-      <Image src="/./homepage.png" alt="" className='!w-[100%] h-auto' unoptimized width={1000} height={1000}/>
+      <Image src={homepage} alt="" className='!w-[100%] h-auto' priority placeholder="blur" sizes="100vw"/>
     </div>
   )
 }

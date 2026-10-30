@@ -6,6 +6,13 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { RiAddLine, RiArrowRightLine, RiCheckDoubleLine } from "react-icons/ri";
+import vapreneurHero from "../../../public/vapreneur-hero.jpg";
+import services1 from "../../../public/services1.jpg";
+import curriculum from "../../../public/new1 (1).jpg";
+import p3 from "../../../public/p3.jpg";
+import pricing from "../../../public/new1 (2).jpg";
+import registrationProcess from "../../../public/new1 (3).jpg";
+import registration from "../../../public/new1 (4).jpg";
 
 const page = () => {
 
@@ -39,7 +46,7 @@ const page = () => {
           </div>
         </div>
 
-        <Image src="/./new1 (1).PNG" alt="" className='w-full h-auto' unoptimized width={1000} height={1000} />
+        <Image src={vapreneurHero} alt="" className='w-full h-auto' priority placeholder="blur" sizes="(max-width: 800px) 100vw, 50vw" />
       </div>
 
       <Marque text="The VAPreneur Blueprint™" />
@@ -47,11 +54,11 @@ const page = () => {
       <div className="bg-white py-yPadding  md:py-[40px]  px-xPadding sm:px-xPadding md:px-[5%] sm:text-center">
         <TwoWay image={null} rev={true}>
           <div className="hidden md:block">
-            <Image src="/./services1.png" alt="" className='w-full h-auto' unoptimized width={1000} height={1000} />
+            <Image src={services1} alt="" className='w-full h-auto' placeholder="blur" sizes="(max-width: 800px) 100vw, 45vw" />
           </div>
 
           <div className="md:hidden">
-            <Image src="/./services1.png" alt="" className='w-full h-auto' unoptimized width={1000} height={1000} />
+            <Image src={services1} alt="" className='w-full h-auto' placeholder="blur" sizes="(max-width: 800px) 100vw, 45vw" />
           </div>
 
           <div className="flex flex-col gap-5 md:text-center">
@@ -112,7 +119,7 @@ const page = () => {
           </div>
 
           <div>
-                <Image src="/./new1 (1).jpg" alt="Curriculum" className="w-full h-[600px] object-cover rounded-lg" width={1000} height={1000} unoptimized />
+                <Image src={curriculum} alt="Curriculum" className="w-full h-[600px] object-cover rounded-lg" placeholder="blur" sizes="(max-width: 800px) 100vw, 45vw" />
               </div>
         </TwoWay>
       </div>
@@ -168,7 +175,7 @@ const page = () => {
                  </div>
               </div>
               <div>
-                <Image src="/./p3.jpg" alt="Curriculum" className="w-full h-[90vh] md:h-[100%] object-cover rounded-lg" width={1000} height={1000} unoptimized />
+                <Image src={p3} alt="Curriculum" className="w-full h-[90vh] md:h-[100%] object-cover rounded-lg" placeholder="blur" sizes="(max-width: 800px) 100vw, 45vw" />
               </div>
             </TwoWay>
           </div>
@@ -176,7 +183,7 @@ const page = () => {
           <div className="bg-white rounded-lg p-8 md:p-6">
             <TwoWay image={null} rev={false}>
               <div>
-                <Image src="/./new1 (2).jpg" alt="Pricing" className="w-full h-[90vh] md:h-[100%]  object-cover rounded-lg" width={1000} height={1000} unoptimized />
+                <Image src={pricing} alt="Pricing" className="w-full h-[90vh] md:h-[100%]  object-cover rounded-lg" placeholder="blur" sizes="(max-width: 800px) 100vw, 45vw" />
               </div>
               <div className="flex flex-col gap-6">
                 <h2 className="bigText text-[40px] md:text-[32px] mb-2">So why ₦15,000, right?</h2>
@@ -211,7 +218,7 @@ const page = () => {
                 <p>You're not just learning, you're launching. Get ready.</p>
               </div>
               <div>
-                <Image src="/./new1 (3).jpg" alt="Registration Process" className="w-full h-[90vh] md:h-[100%] object-cover rounded-lg" width={1000} height={1000} unoptimized />
+                <Image src={registrationProcess} alt="Registration Process" className="w-full h-[90vh] md:h-[100%] object-cover rounded-lg" placeholder="blur" sizes="(max-width: 800px) 100vw, 45vw" />
               </div>
             </TwoWay>
           </div>
@@ -271,7 +278,7 @@ const page = () => {
           </div>
 
           <div>
-            <Image src="/./new1 (4).jpg" alt="Registration" className="w-full h-[90vh] md:h-[100%] object-cover rounded-lg" width={1000} height={1000} unoptimized />
+            <Image src={registration} alt="Registration" className="w-full h-[90vh] md:h-[100%] object-cover rounded-lg" placeholder="blur" sizes="(max-width: 800px) 100vw, 45vw" />
           </div>
         </TwoWay>
       </div>
@@ -294,7 +301,7 @@ const page = () => {
       </div> */}
 
       {/* <div className="relative md:fs md:static fs fs2 md:fs2">
-                <Image src="/./ex.png" alt="" className="md:hidden w-full h-auto" unoptimized width={1000} height={1000} />
+                <Image src="/ex.jpg" alt="" className="md:hidden w-full h-auto" width={1440} height={722} />
 
                 <div className="content absolute  md:static bottom-28 left-xPadding text-white w-3/5 flex flex-col gap-[40px] md:gap-[32px]">
                     <h2 className="text-[59px] md:text-[40px] bigText leading-[68px] md:leading-[48px]">

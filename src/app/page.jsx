@@ -7,19 +7,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { RiArrowRightLine } from "react-icons/ri"
 import Footer from '../components/Footer'
-import { Reveal, Stagger, StaggerItem, DrawLine, ScrollWords, CloseGap, ImageReveal } from '../components/Reveal'
-
-const stats = [
-  { figure: "60%", text: "less daily admin for Shakira Hemphill" },
-  { figure: "20+", text: "high-impact tasks completed every week" },
-  { figure: "Hours", text: "saved on every client onboarding for Britney Jeanine" },
-]
-
-const offers = [
-  { title: "Systems Audit & Action Plan", text: "Find out exactly what’s breaking and what to fix first." },
-  { title: "Structure & Systems Build", text: "Your backend designed, installed and rolled out in 90 days." },
-  { title: "Advisory & Operations Partner", text: "Senior operations leadership, month after month." },
-]
+import dap1 from '../../public/DAP1.jpg'
+import bj from '../../public/bj.jpg'
+import mideLong from '../../public/mide-long.jpg'
+import mideFooter from '../../public/mide-footer.jpg'
 
 export default function Home() {
   return (
