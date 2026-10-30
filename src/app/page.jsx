@@ -7,10 +7,19 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { RiArrowRightLine } from "react-icons/ri"
 import Footer from '../components/Footer'
-import dap1 from '../../public/DAP1.jpg'
-import bj from '../../public/bj.jpg'
-import mideLong from '../../public/mide-long.jpg'
-import mideFooter from '../../public/mide-footer.jpg'
+import { Reveal, Stagger, StaggerItem, DrawLine, ScrollWords, CloseGap, ImageReveal } from '../components/Reveal'
+
+const stats = [
+  { figure: "60%", text: "less daily admin for Shakira Hemphill" },
+  { figure: "20+", text: "high-impact tasks completed every week" },
+  { figure: "Hours", text: "saved on every client onboarding for Britney Jeanine" },
+]
+
+const offers = [
+  { title: "Systems Audit & Action Plan", text: "Find out exactly what’s breaking and what to fix first." },
+  { title: "Structure & Systems Build", text: "Your backend designed, installed and rolled out in 90 days." },
+  { title: "Advisory & Operations Partner", text: "Senior operations leadership, month after month." },
+]
 
 export default function Home() {
   return (
@@ -157,7 +166,7 @@ export default function Home() {
       <div className="my-yPadding px-xPadding md:px-[5%]">
       <TwoWay>
         <ImageReveal>
-          <Image src="/./mide-long.png" alt="" className='w-full h-[800px] object-cover' width={1000} height={1000} unoptimized/>
+          <Image src="/./mide-long.jpg" alt="" className='w-full h-[800px] object-cover' width={1000} height={1000} unoptimized/>
         </ImageReveal>
 
         <Reveal delay={0.2} className='flex flex-col gap-[40px] justify-between md:text-center w-[500px] md:w-full'>
@@ -185,7 +194,7 @@ export default function Home() {
 
       <div className='relative md:fs md:static fs'>
         <ImageReveal className='md:hidden'>
-          <Image src="/./mide-footer.png" alt="" className='w-full h-[500px] object-cover object-top' width={1000} height={1000} unoptimized/>
+          <Image src="/./mide-footer.jpg" alt="" className='w-full h-[500px] object-cover object-top' width={1000} height={1000} unoptimized/>
         </ImageReveal>
 
         <Reveal delay={0.3} className="content absolute md:static bottom-28 left-[10%] text-white w-2/5 flex gap-[40px] flex-col md:gap-[32px]">
