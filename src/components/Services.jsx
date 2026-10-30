@@ -112,7 +112,7 @@ const Services = () => {
                 </div>
             </div>
 
-            <Link href={"/services"}>
+            <Link href={"/work-with-us"}>
                 <div className='flex items-center justify-center bz hover-black gap-2 w-fit p-3 border-2 border-black uppercase m-auto'>
                     Explore Services <RiArrowRightLine />
                 </div>

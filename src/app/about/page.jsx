@@ -152,7 +152,7 @@ const page = () => {
             </div>
              </Link>
 
-            <Link href={"/services"}>
+            <Link href={"/work-with-us"}>
             <div className='flex gap-3 items-center md:w-2/3 md:m-auto border-2 bz border-white py-3 px-6 w-fit hover justify-center'>
                 VIEW PACKAGES  <RiArrowRightLine />
             </div>

@@ -12,7 +12,7 @@ const page = () => {
 
   return (
     <>
-      <NavBar active={4} />
+      <NavBar active={-1} />
 
       <div className="grid grid-cols-2 gap-10 md:gap-10 items-center md:grid-cols-none">
         <div className=" sm:px-xPadding md:px-[5%] px-[10%]">
@@ -309,7 +309,7 @@ const page = () => {
                 </div>
             </div> */}
 
-      <Footer showPinterest={false} />
+      <Footer />
     </>
   );
 };

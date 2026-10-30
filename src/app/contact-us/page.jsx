@@ -7,7 +7,7 @@ import React from "react";
 const page = () => {
   return (
     <div className="bg-[##F8F6F4]">
-      <NavBar active={5} />
+      <NavBar active={4} />
 
       <div className="bg-[#F8F6F4]">
         <img src="./contact.png" alt="" className="relative w-full" />
