@@ -17,6 +17,11 @@ import p3 from "../../../public/p3.jpg";
 import p4 from "../../../public/p4.jpg";
 import p6 from "../../../public/p6.JPG";
 
+export const metadata = {
+  title: "Work With Us · Audits, Systems Builds & Ops Partnership",
+  description: "Systems Audit, 90-day Structure & Systems Build and ongoing Advisory & Operations Partner for founders at $100K–$500K.",
+}
+
 const page = () => {
   const serviceOfferings = [
     {

@@ -6,6 +6,7 @@ import { RiArrowRightLine } from 'react-icons/ri'
 import NavBar from '../../components/NavBar'
 import Footer from '../../components/Footer'
 import TwoWay from '../../components/TwoWay'
+import { Reveal, Stagger, StaggerItem } from '../../components/Reveal'
 import about from '../../../public/about.jpg'
 import dap2 from '../../../public/DAP2.jpg'
 import mideAbout1 from '../../../public/mide-about1.jpg'
@@ -13,34 +14,46 @@ import sa from '../../../public/sa.webp'
 import fun from '../../../public/fun.webp'
 import mideFooter from '../../../public/mide-footer.jpg'
 
+export const metadata = {
+  title: "About Mide Lawal · The Mide Lawal & Co.",
+  description: "Meet Mide Lawal, the strategist behind the operations of 35+ founders across the US, UK, Canada and Nigeria.",
+}
+
 const page = () => {
   return (
     <>
         <NavBar active={1}/>
         
+        <section className='bg-primary2 text-center flex flex-col gap-5 items-center px-[10%] md:px-[5%] py-[100px] md:py-[50px]'>
+            <Reveal as="h1" delay={0.2} y={36} duration={1.3} className='bigText uppercase tracking-[0.12em] text-[56px] md:text-[32px] leading-[68px] md:leading-[42px]'>
+                About the Founder
+            </Reveal>
+
+            <Reveal as="p" delay={0.55} className='max-w-[620px] text-[20px] md:text-[17px] leading-[34px] md:leading-[28px]'>
+                Hi, I’m Mide Lawal, founder of The Mide Lawal & Co. I’m so glad you’re here.
+            </Reveal>
+        </section>
+
         <div className="grid grid-cols-3">
             <Image src={about} alt="" className='w-full h-auto' priority placeholder="blur" sizes="33vw"/>
             <Image src={about} alt="" className='w-full h-auto' priority placeholder="blur" sizes="33vw"/>
             <Image src={about} alt="" className='w-full h-auto' priority placeholder="blur" sizes="33vw"/>
         </div>
 
-        <section className='text-center flex flex-col gap-3 justify-center items-center my-yPadding md:my-[40px] px-[10%] md:px-[4%]'>
-            <p className='text-[16px] uppercase'>I`m So excited you are here !</p>
+        <section className='text-center flex flex-col gap-5 justify-center items-center my-yPadding md:my-[40px] px-[10%] md:px-[4%]'>
+            <Reveal as="h2" className="bigText text-[59px] md:text-[36px]">
+                This is me in a nutshell.
+            </Reveal>
 
-            <h2 className="bigText text-[59px] md:text-[36px] capitalize">
-                This is me in a nutshell
-            </h2>
+            <Stagger className='w-[75%] md:w-full flex flex-col gap-4' gap={0.25} delay={0.15}>
+                <StaggerItem as="p">
+                    I’m a business strategist and operations specialist. I partner with founders and executives to build the systems, processes and operating structure that turn big visions into sustainable businesses.
+                </StaggerItem>
 
-            <p className='w-[85%] md:w-full'>
-                There are so many side of me, all of which are tied to the core of my being a child of God. In summary, I`m an operations strategist who loves to help entrepreneurs show up in their business with ease. I’m also an interior design enthusiast. I collect beautiful  interior design inspirations and ideas. I really  love organizing and styling spaces, I find it therapeutic and fun. It's one of the ways I relax, rest and remove myself from my head. I have a tight-knit email community where I share weekly insights derived from the lessons I’m currently learning as I live my life daily in the plans my Abba has laid before me. 
-            </p>
-
-            <Link href={"https://themidelawal.substack.com/subscribe"} target='_blank'>
-              <button className='flex border-2 border-black gap-2 items-center p-3 w-fit uppercase bz hover-black'>
-                SUBCRIBE TO MY NEWSLETTER <RiArrowRightLine />
-              </button>
-            </Link>
-            
+                <StaggerItem as="p">
+                    I’m known for bringing calm to complexity, and for building systems that keep serving a business long after they’re handed over. My clients aren’t simply building businesses; they’re building legacies.
+                </StaggerItem>
+            </Stagger>
         </section>
 
     <div className="bg-primary2 py-yPadding md:py-[40px] md:px-[5%] px-xPadding">

@@ -16,19 +16,19 @@ const NavBar = ({active = 0}) => {
         },
         {
             title: "About",
-            link: "/about.html"
+            link: "/about"
         },
         {
             title: "Work With Us",
-            link: "/work-with-us.html"
+            link: "/work-with-us"
         },
         {
             title: "Results",
-            link: "/results.html"
+            link: "/results"
         },
         {
             title: "Contact",
-            link: "/contact-us.html"
+            link: "/contact-us"
         }
     ]
   return (

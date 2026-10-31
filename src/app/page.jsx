@@ -9,6 +9,11 @@ import { RiArrowRightLine } from "react-icons/ri"
 import Footer from '../components/Footer'
 import { Reveal, Stagger, StaggerItem, DrawLine, ScrollWords, CloseGap, ImageReveal } from '../components/Reveal'
 
+export const metadata = {
+  title: "The Mide Lawal & Co. · Strategy & Operations Advisory",
+  description: "We build the systems, processes and structure behind expert-led brands, so your business runs without you in everything.",
+}
+
 const stats = [
   { figure: "60%", text: "less daily admin for Shakira Hemphill" },
   { figure: "20+", text: "high-impact tasks completed every week" },

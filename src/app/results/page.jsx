@@ -12,6 +12,11 @@ import shakira from '../../../public/shakira.jpg'
 import ashleigh from '../../../public/ashleigh.jpg'
 import ex from '../../../public/ex.jpg'
 
+export const metadata = {
+  title: "Client Results · The Mide Lawal & Co.",
+  description: "Case studies and client words: 60% less admin, hours saved on onboarding, and teams with real ownership.",
+}
+
 const page = () => {
   return (
     <div className='bg-[#F8F6F4]'>

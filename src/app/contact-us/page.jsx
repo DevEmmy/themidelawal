@@ -5,6 +5,11 @@ import React from "react";
 import contact from "../../../public/contact.webp";
 import kwBig from "../../../public/kw-big.webp";
 
+export const metadata = {
+  title: "Contact · Book a Fit Call",
+  description: "Book a 30-minute fit call or send a note. We reply within 24–48 business hours.",
+}
+
 const page = () => {
   return (
     <div className="bg-[##F8F6F4]">
