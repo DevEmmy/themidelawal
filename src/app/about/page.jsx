@@ -6,7 +6,7 @@ import { RiArrowRightLine } from 'react-icons/ri'
 import NavBar from '../../components/NavBar'
 import Footer from '../../components/Footer'
 import TwoWay from '../../components/TwoWay'
-import { Reveal, Stagger, StaggerItem } from '../../components/Reveal'
+import { Reveal, Stagger, StaggerItem, ImageReveal } from '../../components/Reveal'
 import about from '../../../public/about.jpg'
 import dap2 from '../../../public/DAP2.jpg'
 import mideAbout1 from '../../../public/mide-about1.jpg'
@@ -18,6 +18,21 @@ export const metadata = {
   title: "About Mide Lawal · The Mide Lawal & Co.",
   description: "Meet Mide Lawal, the strategist behind the operations of 35+ founders across the US, UK, Canada and Nigeria.",
 }
+
+const beliefs = [
+    { title: "Structure is what gives freedom.", text: "Systems are how you get your time and headspace back." },
+    { title: "The experience must match the promise.", text: "What clients live through after they pay should match what they saw before." },
+    { title: "Calm over chaos.", text: "A steady hand in the room changes everything." },
+    { title: "Built to last.", text: "A system is only good if it keeps working after we’ve handed it over." },
+]
+
+const funFacts = [
+    "I’m always curious about God, and that curiosity shapes how I live and work.",
+    "You’ll find me at yoga, Pilates or barre.",
+    "My favourite evening is my couch and a good mystery or crime show.",
+    "Unpopular opinion: I don’t like plantain.",
+    "Interior design and organising spaces are how I relax.",
+]
 
 const page = () => {
   return (
@@ -34,11 +49,13 @@ const page = () => {
             </Reveal>
         </section>
 
+        <ImageReveal>
         <div className="grid grid-cols-3">
             <Image src={about} alt="" className='w-full h-auto' priority placeholder="blur" sizes="33vw"/>
             <Image src={about} alt="" className='w-full h-auto' priority placeholder="blur" sizes="33vw"/>
             <Image src={about} alt="" className='w-full h-auto' priority placeholder="blur" sizes="33vw"/>
         </div>
+        </ImageReveal>
 
         <section className='text-center flex flex-col gap-5 justify-center items-center my-yPadding md:my-[40px] px-[10%] md:px-[4%]'>
             <Reveal as="h2" className="bigText text-[59px] md:text-[36px]">
@@ -58,25 +75,31 @@ const page = () => {
 
     <div className="bg-primary2 py-yPadding md:py-[40px] md:px-[5%] px-xPadding">
         <TwoWay>
-            <Image src={mideAbout1} alt="" placeholder="blur" sizes="(max-width: 800px) 100vw, 480px"/>
+            <ImageReveal>
+                <Image src={mideAbout1} alt="" placeholder="blur" sizes="(max-width: 800px) 100vw, 480px"/>
+            </ImageReveal>
 
-            <div className='flex flex-col gap-5 md:text-center'>
+            <Reveal delay={0.2} className='flex flex-col gap-5 md:text-center'>
             <h2 className='bigText text-[48px] md:text-[38px]'>
-                How it all began
+                How it all began.
             </h2>
 
             <p>
-                Growing up, I loved and enjoyed the art of organizing, creating seamless environments, ensuring everything flowed effortlessly, and curating spaces that not only looked good but felt good. It wasn't just about a tidy physical space; I craved a clean mental sanctuary too.
+                I’ve loved order for as long as I can remember. Long before I had a name for it, I was the one organising the room, the plan and the people.
             </p>
 
             <p>
-                As I embarked on my career journey, I envisioned playing a pivotal role behind the scenes, helping entrepreneurs find joy in their business operations. My penchant for organization seamlessly transitioned into my professional path. Inspired by the complaints of entrepreneurs overwhelmed by backend challenges, I confidently said, "I can help you do it." And that`s was how , The Private Assistant started. 
+                In 2020 I started supporting entrepreneurs behind the scenes, first as an assistant, then as a business and operations manager. Over seven years I’ve worked with 35+ businesses across the US, UK, Canada and Nigeria: coaches, consultants, speakers, agencies, fitness brands, coffee producers and retailers, a luxury hair brand, and faith-led and spiritually led education businesses.
             </p>
 
             <p>
-            In the four years since founding my business, I have forged successful long-term partnerships with  numerous service-based entrepreneurs across diverse industries and in different parts of the world. have placed their trust in me for business support, backend end structure and strategy. Despite a structured approach, each client feels like my only focus and have gotten result for their investment.
+                That range taught me something simple. Every growing business breaks in the same places: ideas outrun structure, the founder becomes the operating system, and the client experience starts to lag behind the brand.
             </p>
-            </div>
+
+            <p>
+                The Mide Lawal & Co. exists to fix that. Today we work as a strategy and operations advisory, helping founders move from vision to structure to execution.
+            </p>
+            </Reveal>
         </TwoWay>
       </div>
 
@@ -84,102 +107,100 @@ const page = () => {
       <div className="bg-[white] py-yPadding px-xPadding md:py-[40px] md:px-[5%]">
         <div className='grid grid-cols-2 gap-[104px] md:gap-[40px] md:grid-cols-none md:flex md:flex-col-reverse'>
 
-            <div className='flex flex-col gap-5 md:text-center'>
+            <div className='flex flex-col gap-8 md:text-center'>
+            <Reveal as="h2" className='bigText text-[48px] md:text-[34px] leading-[62px] md:leading-[42px]'>
+                Operations should feel like luxury.
+            </Reveal>
 
-            <p>
-            Being a business owner myself, I understand the challenges of managing a business with seemingly endless to-do lists. Navigating and achieving the success you desire can be daunting, and that's where I come in. Entrust me with all your business tasks and support needs. When you choose me, it's more than a commitment, I take it seriously.
-            </p>
-
-            <p>
-            I envision myself as a business midwife, dedicated to supporting service-based entrepreneurs in bringing their business goals to life without sacrificing personal time and needs. My strength lies in seamlessly aligning your business plans and goals with effective implementation. I excel in turning plans into actions! 
-            </p>
-
-            <p>
-            Passionate about delivering excellent value, I am dedicated to constant self-improvement to serve you better.
-            </p>
+            <Stagger as="ul" className='flex flex-col gap-6' gap={0.2} delay={0.1}>
+                {beliefs.map((b, i) => (
+                    <StaggerItem as="li" key={i} className='border-t border-black/20 pt-5 flex flex-col gap-1'>
+                        <span className='bigText text-[24px] md:text-[22px]'>{b.title}</span>
+                        <p>{b.text}</p>
+                    </StaggerItem>
+                ))}
+            </Stagger>
             </div>
 
-            <Image src={dap2} alt="" className='w-full h-auto' placeholder="blur" sizes="(max-width: 800px) 100vw, 45vw"/>
+            <ImageReveal>
+                <Image src={dap2} alt="" className='w-full h-auto' placeholder="blur" sizes="(max-width: 800px) 100vw, 45vw"/>
+            </ImageReveal>
         </div>
       </div>
 
 
 
       <div className="grid grid-cols-2  justify-center md:flex md:flex-col-reverse">
-        <div className='flex flex-col justify-center gap-3 pl-[20%] pr-[5%] btm md:px-[5%] md:text-center md:py-20 '>
-          <h2 className='bigText text-[40px] md:text-[32px] leading-[63px] md:leading-[40px]'>
-            Hiring Mide is one of the best decisions I have ever made in my business!
+        <Reveal className='flex flex-col justify-center gap-5 pl-[20%] pr-[5%] btm md:px-[5%] md:text-center md:py-20 '>
+          <h2 className='bigText text-[44px] md:text-[32px] leading-[60px] md:leading-[40px]'>
+            “Hiring Mide is one of the best decisions I have ever made.”
           </h2>
 
-          <p>
-          Working with Mide over the past year has been a dream! Not only has my business been optimized on all fronts, the standard and quality of my client delivery has skyrocketed since she joined the team. Mide is timely, organized, super Tech-savvy, and has added so much structure to our operations and marketing.
-          </p>
-
           <p className='text-[1.2em] uppercase'>
-          Simi Awokoya
+            Simi Awokoya, Career Coach for Black Women
           </p>
-        </div>
+        </Reveal>
 
-        <Image src={sa} alt="" sizes="(max-width: 800px) 100vw, 720px"/>
+        <ImageReveal>
+          <Image src={sa} alt="" sizes="(max-width: 800px) 100vw, 720px"/>
+        </ImageReveal>
       </div>
 
       <div className="bg-white my-yPadding px-xPadding md:px-[5%]">
         <TwoWay>
 
-        <Image src={fun} alt="" sizes="(max-width: 800px) 100vw, 496px"/>
+        <ImageReveal>
+            <Image src={fun} alt="" sizes="(max-width: 800px) 100vw, 496px"/>
+        </ImageReveal>
 
-            <div className='flex flex-col gap-5 md:text-center'>
-                <h2 className="bigText text-[48px] md:text-[38px]">
-                A few fun facts
-                </h2>
+            <div className='flex flex-col gap-6 md:text-center'>
+                <Reveal as="h2" className="bigText text-[48px] md:text-[38px]">
+                    A few fun facts.
+                </Reveal>
 
-                <p className='uppercase font-semibold'>I love to wonder about GoD </p>
-                <p>
-                    I love to wonder about God…. I just sit and start to wonder about Him, who He is. How He is who He is….What makes Him who He is….and How He is able to love a person like me despite who He is
-                </p>
-
-                <p className='uppercase font-semibold'>I LOVE MY YOGA, PILATE AND BARRE MOMENTS! </p>
-                <p>
-                As much as my body hurts almost every day 😂 I lovvveeee my Yoga, Pilates, and Barre moments! They get me out of my head to focus on me at the time which is more about the me focused time I get on weekdays 
-                </p>
-
-                <p className='uppercase font-semibold'>MY SPACE IS MY COMFORT ZONE </p>
-                <p>
-                My space is my comfort zone, I prefer to snuggle up on my couch with my cute comfort blanket and bing on an amazing crime, medical or mystery series but if you can succeed in getting me out, the outside me is real fun (I promise)
-                </p>
-
-                <p className='uppercase font-semibold'>I just don’t like plantain </p>
-                <p>
-                I honestly get what the fuss is about plantain but I just don’t like plantain, I’m guessing maybe it’s because I ate it a lot at some point so now I’m just like nahhh…..I’ll pass
-                </p>
+                <Stagger as="ul" className='flex flex-col gap-4' gap={0.15} delay={0.1}>
+                    {funFacts.map((f, i) => (
+                        <StaggerItem as="li" key={i} y={20} className='border-t border-black/20 pt-4'>
+                            <p>{f}</p>
+                        </StaggerItem>
+                    ))}
+                </Stagger>
             </div>
         </TwoWay>
       </div>
 
       <div className='relative my-32 md:my-16 md:fs md:static fs'>
-        <Image src={mideFooter} alt="" className='md:hidden' placeholder="blur" sizes="1440px"/>
+        <ImageReveal className='md:hidden'>
+          <Image src={mideFooter} alt="" placeholder="blur" sizes="1440px"/>
+        </ImageReveal>
 
-        <div className="content absolute md:static bottom-28 left-[10%] text-white w-2/5 flex flex-col gap-[40px] md:gap-[20px]">
+        <Reveal delay={0.3} className="content absolute md:static bottom-28 left-[10%] text-white w-2/5 flex flex-col gap-[40px] md:gap-[20px]">
+          <div className='flex flex-col gap-3'>
           <h2 className="text-[60px] bigText leading-[68px] md:leading-[40px] md:text-[40px]">
-          Where are you at in the process?
+          Where are you in the process?
           </h2>
 
+          <p>
+            Whether you’re still figuring out what’s wrong or ready for a full build, the fit call is the place to start.
+          </p>
+          </div>
+
           <div className="flex gap-6 md:justify-center md:flex-col">
-             <Link href="/contact-us">
+             <Link href="https://calendar.app.google/9eJEpYdDz9APFzFh7" target='_blank'>
              <div className='px-6 py-3 gap-3 bg-white md:w-2/3 md:m-auto border-2 bz border-white text-black flex items-center justify-center hover-black'>
-                I'M READY <RiArrowRightLine />
+                Book a fit call <RiArrowRightLine />
             </div>
              </Link>
 
             <Link href={"/work-with-us"}>
             <div className='flex gap-3 items-center md:w-2/3 md:m-auto border-2 bz border-white py-3 px-6 w-fit hover justify-center'>
-                VIEW PACKAGES  <RiArrowRightLine />
+                See ways to work together <RiArrowRightLine />
             </div>
             </Link>
           </div>
 
          
-        </div>
+        </Reveal>
       </div>
 
         <Footer />

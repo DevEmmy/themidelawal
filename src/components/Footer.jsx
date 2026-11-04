@@ -3,6 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 import { RiArrowRightLine } from 'react-icons/ri'
 import { SiInstagram, SiLinkedin } from 'react-icons/si'
+import { Reveal } from './Reveal'
 
 const Footer = () => {
     const nav = [
@@ -60,7 +61,7 @@ const Footer = () => {
     )
 
   return (
-    <div className='mt-10 md:mt-[24px]'>
+    <Reveal y={20} className='mt-10 md:mt-[24px]'>
         <div className='text-white bg-black pt-20 pb-10'>
 <div className=' px-xPadding'>
         <div className=' flex justify-between md:text-center md:items-center md:justify-center md:flex-col md:gap-7'>
@@ -123,7 +124,7 @@ const Footer = () => {
         </div>
 
 
-    </div>
+    </Reveal>
   )
 }
 

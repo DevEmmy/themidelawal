@@ -4,7 +4,8 @@ import React, { useRef } from 'react'
 
 // A slow, soft ease-out: quick to start, long gentle settle.
 const ease = [0.22, 1, 0.36, 1]
-const viewport = { once: true, margin: "0px 0px -80px 0px" }
+// once: false, so sections animate in on the way down and out again as they leave the screen.
+const viewport = { once: false, margin: "0px 0px -80px 0px" }
 
 // Fades and drifts an element up as it scrolls into view (or on load, if already visible).
 export const Reveal = ({ children, className, delay = 0, y = 28, duration = 1, as = "div" }) => {

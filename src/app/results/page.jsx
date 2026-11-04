@@ -1,9 +1,11 @@
 import Footer from '../../components/Footer'
 import NavBar from '../../components/NavBar'
+import TwoWay from '../../components/TwoWay'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { RiArrowRightLine } from 'react-icons/ri'
+import { Reveal, Stagger, StaggerItem, ImageReveal } from '../../components/Reveal'
 import bgCe from '../../../public/bg-ce.jpg'
 import mmCe from '../../../public/mm-ce.jpg'
 import saCe from '../../../public/sa-ce.webp'
@@ -17,162 +19,168 @@ export const metadata = {
   description: "Case studies and client words: 60% less admin, hours saved on onboarding, and teams with real ownership.",
 }
 
+const BOOK_CALL = "https://calendar.app.google/9eJEpYdDz9APFzFh7"
+
+const caseStudies = [
+  {
+    client: "Britney Jeanine",
+    role: "The Pivot Pusher",
+    headline: "Relaunching a coaching business on a backend built to deliver.",
+    diagnosis: "A relaunch with two new offers, running on outdated, manual delivery and onboarding.",
+    design: "An offer-led Notion workspace with client portals, and automated onboarding across Wix, Notion, Google Drive and templated emails.",
+    outcome: "Onboarding that saves her hours every week, and the freedom to lead as the visionary, not the admin.",
+    image: bgCe,
+  },
+  {
+    client: "Shakira Hemphill",
+    role: "Speaker, Life Coach & HR Strategist",
+    headline: "Turning fast growth into a business that runs on rhythm.",
+    diagnosis: "Fast expansion with no full team and a backend that lacked cohesion.",
+    design: "A rebuilt Asana backend, a Google Drive headquarters, a weekly operating rhythm and structure for her HR client projects.",
+    outcome: "60% less daily admin and 20+ high-impact tasks completed every week.",
+    image: shakira,
+  },
+  {
+    client: "Ashleigh Chanél",
+    role: "CEO, Make Your Mark Consulting",
+    headline: "Owning the full backend, so the founder didn’t have to.",
+    diagnosis: "A thriving business with disorganised or non-existent systems behind it.",
+    design: "A custom ClickUp workspace, personalised SOPs and a “How to Work with Ashleigh” guide.",
+    outcome: "A contractor team with real task ownership, delivered hands-off with minimal revisions.",
+    image: ashleigh,
+  },
+]
+
+const quotes = [
+  {
+    text: "Working with Mide over the past year has been a dream! Not only has my business been optimized on all fronts, the standard and quality of my client delivery has skyrocketed since she joined the team. Hiring Mide is one of the best decisions I have ever made.",
+    name: "Simi Awokoya",
+    role: "Career Coach for Black Women",
+    image: saCe,
+  },
+  {
+    text: "If you’ve ever prayed for someone who could carry both the vision and the weight, Mide is that answer.",
+    name: "Shakira Hemphill",
+    role: "Speaker, Life Coach & HR Strategist",
+    image: shakira,
+  },
+  {
+    text: "Mide is punctual, detail-oriented, and always shows up to honor her word. I have never worried about clients and work not getting the attention needed.",
+    name: "Britney Jeanine",
+    role: "The Pivot Pusher",
+    image: bgCe,
+  },
+  {
+    text: "Mide has simplified my life in more ways than I can articulate. She does not only give you value for your money, but she also goes above and beyond her job description.",
+    name: "Morenike Molehin",
+    role: "Founder, Grow With Renny",
+    image: mmCe,
+  },
+  {
+    text: "She specializes in helping high-level entrepreneurs get their backend operations all the way together. Mide’s your girl.",
+    name: "Ashleigh Chanél",
+    role: "CEO, Make Your Mark Consulting",
+    image: ashleigh,
+  },
+  {
+    text: "She is professional, thorough, knowledgeable, and reliable. She always has a positive attitude and completes tasks in a timely manner.",
+    name: "Kamilah Williams",
+    role: "Fitness Instructor",
+    image: kw,
+  },
+]
+
 const page = () => {
   return (
     <div className='bg-[#F8F6F4]'>
         <NavBar active={3} />
 
-        <div>
-            <h2 className='bg-[#EFEEEA] bigText text-[59px] text-center py-[32px] md:text-[38px] md:py-[16px]'>Client Experience Review</h2>
+        {/* Hero */}
+        <div className='bg-[#EFEEEA] px-xPadding py-[100px] md:py-[50px] text-center flex flex-col items-center gap-5'>
+            <Reveal as="p" delay={0.1} y={14} className='uppercase tracking-[0.2em] text-[14px]'>
+                Client Results
+            </Reveal>
 
-            <p className='text-center w-1/2 md:w-full md:px-xPadding m-auto py-8 md:py-[16px]'>
-            Some kind words from clients who have experienced and enjoy ease working with me. I hope to add your testimonial  to this page in the future!
-            </p>
+            <Reveal as="h1" delay={0.3} y={36} duration={1.3} className='bigText text-[64px] md:text-[36px] leading-[78px] md:leading-[46px] max-w-[900px]'>
+                What changes when the structure is right.
+            </Reveal>
+
+            <Reveal as="p" delay={0.6} className='max-w-[620px] text-[18px] md:text-[16px]'>
+                Real founders, real backends, and what happened once the structure was in place.
+            </Reveal>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-none md:flex md:flex-col gap-[104px] md:gap-[30px] md:my-[0px] justify-center px-xPadding my-[60px]">
-            <Image src={bgCe} alt="" priority sizes="(max-width: 800px) 100vw, 516px" />
+        {/* Case studies */}
+        <div className='px-xPadding py-[80px] md:py-[40px] flex flex-col gap-[100px] md:gap-[60px]'>
+            {caseStudies.map((c, i) => (
+                <TwoWay key={i}>
+                    <ImageReveal className={i % 2 === 1 ? 'order-2 md:order-1' : ''}>
+                        <Image src={c.image} alt={c.client} placeholder="blur" className='w-full h-[640px] md:h-[400px] object-cover object-top' sizes="(max-width: 800px) 100vw, 45vw" />
+                    </ImageReveal>
 
-            <div className='flex flex-col gap-5 text-center'>
-                <p>
-                Mide came into my life [and business] at the perfect time. I was in the midst of relaunching my coaching business and had several new offers that needed administrative support. And while I booked a "virtual assistant", I received so much more. From my emails, calendar management, social media, and the restructuring/organization of the backend of my business, Mide is truly heaven-sent. So much so that I envision her being around for as long as she will allow my family to have her. Overall, Mide is punctual, detail-oriented, and always shows up to honor her word. I have never worried about clients [and work] not getting the attention needed... and cannot imagine my business(es) without her. Mide is INCREDIBLE to work with, PATIENT, KIND, and will be just the right hand you need to take your business to the next level
-                </p>
+                    <Reveal delay={0.15} className={`flex flex-col gap-6 md:text-center ${i % 2 === 1 ? 'order-1 md:order-2' : ''}`}>
+                        <div className='flex flex-col gap-1'>
+                            <p className='uppercase tracking-[0.15em] text-[13px] font-semibold'>{c.client} · {c.role}</p>
+                            <h2 className='bigText text-[40px] md:text-[30px] leading-[52px] md:leading-[38px]'>{c.headline}</h2>
+                        </div>
 
-                <div>
-                    <p className=" text-[24px] md:text-[18px]">BRITNEY JEANINE</p>
-                    <p>
-                    PIVOT PUSHER, RETIRED BIZ COACH
-                    </p>
-                </div>
-            </div>
+                        <Stagger className='flex flex-col gap-5' gap={0.2} delay={0.2}>
+                            {[
+                                ['Diagnosis', c.diagnosis],
+                                ['Design', c.design],
+                                ['Outcome', c.outcome],
+                            ].map(([label, text]) => (
+                                <StaggerItem key={label} y={18} className='border-t border-black/20 pt-4'>
+                                    <p className='uppercase tracking-[0.15em] text-[13px] font-semibold mb-1'>{label}</p>
+                                    <p>{text}</p>
+                                </StaggerItem>
+                            ))}
+                        </Stagger>
+                    </Reveal>
+                </TwoWay>
+            ))}
         </div>
 
+        {/* Client words */}
+        <div className='bg-primary2 px-xPadding py-yPadding md:py-[40px] flex flex-col gap-12 md:gap-8'>
+            <Reveal as="h2" className='bigText text-[50px] md:text-[36px] text-center'>
+                In their words.
+            </Reveal>
 
-        <div className="grid grid-cols-2 md:grid-cols-none gap-[104px] md:gap-[40px] md:flex md:flex-col-reverse justify-center px-xPadding my-yPadding">
-            <div className='flex flex-col gap-5 md:text-center'>
-                <p>
-                Working with Mide over the last couple of months and years has been extremely beautiful. Mide has simplified my life in many ways than I can articulate. She does not only give you value for your money, but she also goes above and beyond her job description. Her attention to details is top notch. You can tell she is extremely passionate about adding value to the life of her client. It comes naturally to her, and you can tell the level of skills she puts into her craft. I have never found someone with such a great work ethic. Mide doesn’t need to be micromanaged. She is extremely diligent and thorough. She also needs little or no supervision. You just tell her what you want, and she thinks way beyond what you might have even thought. Fleshing out your ideas and finding efficient ways to get them done. I generally believe there is nothing Mide cannot figure out or execute.
-                </p>
+            <Stagger className='grid grid-cols-2 md:grid-cols-1 gap-8' gap={0.15}>
+                {quotes.map((q, i) => (
+                    <StaggerItem key={i} className='bg-white p-10 md:p-6 flex flex-col gap-6 justify-between'>
+                        <p className='text-[18px] md:text-[16px] italic'>“{q.text}”</p>
 
-                <p>
-                The way she executes tasks is admirable. I also love her communication skills. She is very intuitive and knows when and how to get me to do things, which is very key especially when working with busy professionals like me.  The beautiful thing about how structured Mide is no matter how many clients she takes on, she makes you feel like you are her only client. I do not and have never felt any form of distractions, She is also very creative, and her time management skills are impeccable.  I can trust Mide to take decisions for me because she has mastered the art of effective decision making and I can rely on her to make sound judgement over something. In general, she makes my life easier, and I am so grateful for the role she plays in my life. I highly recommend her if you want to be at your best as a Professional.
-                </p>
-
-                <div>
-                    <p className=" text-[24px] uppercase md:text-[18px]">Morenike Molehin</p>
-                    <p className='uppercase'>
-                    Interior Designer + Lifestyle Content Creator
-                    </p>
-                </div>
-            </div>
-
-            <Image src={mmCe} alt="" placeholder="blur" sizes="(max-width: 800px) 100vw, 516px" />
+                        <div className='flex items-center gap-4'>
+                            <Image src={q.image} alt="" className='w-[64px] h-[64px] rounded-full object-cover object-top flex-shrink-0' sizes="64px" />
+                            <div>
+                                <p className='uppercase font-semibold text-[15px] leading-[22px]'>{q.name}</p>
+                                <p className='text-[14px] leading-[22px]'>{q.role}</p>
+                            </div>
+                        </div>
+                    </StaggerItem>
+                ))}
+            </Stagger>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-none gap-[104px] md:gap-[40px] md:flex md:flex-col justify-center px-xPadding my-yPadding md:my-[20px]">
-            <Image src={saCe} alt="" sizes="(max-width: 800px) 100vw, 516px" />
-
-            <div className='flex flex-col gap-5 md:text-center'>
-                <p>
-                Working with Mide over the past year has been a dream! Not only has my business been optimized on all fronts, the standard and quality of my client delivery has skyrocketed since she joined the team. Mide is timely, organized, super Tech-savvy, and has added so much structure to our operations and marketing. Hiring Mide is one of the best decisions I have ever made in my business.
-                </p>
-
-                <div>
-                <p className="text-[24px] md:text-[18px]">SIMI AWOKOYA</p>
-                <p >CAREER COACH FOR BLACK WOMEN</p>
-                </div>
-            </div>
-        </div>
-
-
-        <div className="grid grid-cols-2 md:grid-cols-none md:flex md:flex-col-reverse gap-[104px] md:gap-[40px] justify-center px-xPadding my-yPadding">
-            <div className='flex flex-col gap-5 md:text-center'>
-                <p>
-                My experience with The Mide Lawal & Co., has been nothing short of amazing! She is professional, thorough, knowledgeable, and reliable. Lami always has a positive attitude and completes tasks in a timely manner. In fact, she works FAST and sometimes I have to work harder to keep up! Most importantly, I really do believe as my business grows, Lami will be able to keep up with the demand and grow right along with me! Thanks for all you do!.
-                </p>
-
-                <div>
-                    <p className=" text-[24px] uppercase md:text-[18px]">KAMILAH WILLIAMS</p>
-                    <p className='uppercase text-[18px] md:text-[16px]'>
-                    FITNESS INSTRUCTOR
-                    </p>
-                </div>
-            </div>
-
-            <Image src={kw} alt="" placeholder="blur" sizes="(max-width: 800px) 100vw, 516px" />
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-none gap-[104px] md:gap-[40px] md:flex md:flex-col justify-center px-xPadding my-yPadding md:my-[20px]">
-            <Image className='w-full h-full object-cover' src={shakira} alt="Shakira Hemphill" placeholder="blur" sizes="(max-width: 800px) 100vw, 45vw" />
-
-            <div className='flex flex-col gap-5 md:text-center'>
-                <p>
-                Working with Mide has been one of the greatest blessings in this season of business. She didn’t just come in to support—she came in and shifted the atmosphere. The systems. The structure. The strategy.
-                </p>
-                <p>
-                When God answered my prayers and sent help to streamline, strategize and scale—He sent Lami. From the moment she joined my team, things didn’t just get done—they got aligned. She brought order where there was overwhelm, clarity where there was chaos, and strategy where there was strain.
-                </p>
-                <p>
-                Mide is truly the Olivia Pope of my business. Sharp. Spirit-led. Solution-focused. She doesn’t just check boxes—she builds legacy. Her partnership has given me the freedom to dream bigger, lead stronger, and rest deeper knowing that the behind-the-scenes is being held with care, excellence, and intention.
-                </p>
-                <p>
-                What sets her apart is not just her skill—but her heart. She serves from a place of mission, not just management. She thinks ahead, moves with discernment, and makes room for me to lead without burning out.
-                </p>
-                <p>
-                If you’ve ever prayed for someone who could carry both the vision and the weight—Mide is that answer. My business is better because of her. And so am I.
-                </p>
-                <div>
-                    <p className=" text-[24px] uppercase md:text-[18px]">Shakira Hemphill</p>
-                    <p className="uppercase md:text-[16px]">Speaker, Life Coach & HR Strategist</p>
-                </div>
-            </div>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-none gap-[104px] md:gap-[40px] md:flex md:flex-col justify-center px-xPadding my-yPadding md:my-[20px]">
-            <Image src={ashleigh} alt="Ashleigh Chanél" placeholder="blur" sizes="(max-width: 800px) 100vw, 691px" />
-
-            <div className='flex flex-col gap-5 md:text-center'>
-                <p>Mide, MY Operations & Systems Specialist.</p>
-                <p>When I say she is the Ops person of my dreeeeeaaammzzz—I mean it!</p>
-                <p>My SOPs? Phenomenal. So detailed and thoughtful.</p>
-                <p>She even created a “How to Work with Ashleigh” document that makes me laugh every time because it’s so true.</p>
-                <p>She specializes in helping high-level entrepreneurs get their backend operations all the way together. Whether you’re drowning in disorganized systems (or no systems at all like I was—lol) or just need a fresh pair of eyes to audit and refine what’s already there—Mide’s your girl.</p>
-                <p>She’s helped me with team ops, systems, and SOPs.</p>
-                <p>Onboarding ops, systems, and SOPs.</p>
-                <p>ClickUp setup. ALL the things.</p>
-                <p>And why I love her so much? Because she OWNS the whole thing.</p>
-                <p>I told her what I wanted and that I didn’t want to be involved until the very end to review it—and she delivered.</p>
-                <p>I almost never need to make revisions. She takes the time to understand me and how I work—and I like someone who can critically think.</p>
-                <p>She considers what will work best for me and isn’t afraid to tell me when I need to reel it in or when something’s unnecessary.</p>
-                <p>Mide brings the perfect balance of clarity, calm, and strategic execution.</p>
-                <p>She doesn’t just set up systems—she steps into your business with intention, sees what you can’t always articulate, and turns it into a high-functioning backend flow.</p>
-                <p>She’s thoughtful, professional, and deeply committed to excellence (another one of my core values), and she makes the process feel supportive instead of stressful.</p>
-                <p>Because when I hire someone, I don’t want to be involved.</p>
-                <p>No fluff. No chaos. And NO LOLLYGAGGING.</p>
-                <p>If you’ve ever wished someone could just get it and help you build a business that runs smoothly behind the scenes—Mide is exactly who you’ve been looking for.</p>
-                <p>So, if you’ve been meaning to fix the backend mess but keep pushing it off, this is your sign. Reach out to Mide.</p>
-                <div>
-                    <p className=" text-[24px] uppercase md:text-[18px]">Ashleigh Chanél</p>
-                    <p className="uppercase md:text-[16px]">Marketing & Ads Specialist</p>
-                </div>
-            </div>
-        </div>
-
+        {/* Final call to action */}
         <div className='relative md:fs md:static fs'>
-        <Image src={ex} alt="" className='md:hidden w-full h-[500px] object-cover object-top' placeholder="blur" sizes="100vw"/>
+        <ImageReveal className='md:hidden'>
+            <Image src={ex} alt="" className='w-full h-[500px] object-cover object-top' placeholder="blur" sizes="100vw"/>
+        </ImageReveal>
 
-        <div className="content absolute md:static bottom-28 left-xPadding text-white w-3/5 flex flex-col gap-[40px] md:gap-[32px]">
+        <Reveal delay={0.3} className="content absolute md:static bottom-28 left-xPadding text-white w-3/5 flex flex-col gap-[40px] md:gap-[32px]">
         <h2 className="text-[59px] md:text-[40px] bigText leading-[68px] md:leading-[40px]">
-          Ready to experience the reality of doing business with ease? 
+          Ready for results like these?
           </h2>
 
-             <Link href="/contact-us">
+             <Link href={BOOK_CALL} target='_blank'>
              <div className='px-6 py-3 gap-3 bg-transparent bz hover border-2 md:m-auto border-white w-fit flex items-center '>
-                WORK WITH ME <RiArrowRightLine />
+                Book a fit call <RiArrowRightLine />
             </div>
              </Link>
-         
-        </div>
+        </Reveal>
       </div>
 
 

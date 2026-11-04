@@ -5,7 +5,8 @@ import TwoWay from "../../components/TwoWay";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { RiArrowRightLine, RiCheckDoubleLine } from "react-icons/ri";
+import { Reveal, Stagger, StaggerItem, ImageReveal } from "../../components/Reveal";
+import { RiArrowRightLine, RiCheckLine } from "react-icons/ri";
 import dap3 from "../../../public/DAP3.jpg";
 import dap4 from "../../../public/DAP4.jpg";
 import services2 from "../../../public/services2.webp";
@@ -13,331 +14,308 @@ import mm from "../../../public/mm.webp";
 import ex from "../../../public/ex.jpg";
 import p1 from "../../../public/p1.jpg";
 import p2 from "../../../public/p2.jpg";
-import p3 from "../../../public/p3.jpg";
 import p4 from "../../../public/p4.jpg";
-import p6 from "../../../public/p6.JPG";
 
 export const metadata = {
   title: "Work With Us · Audits, Systems Builds & Ops Partnership",
   description: "Systems Audit, 90-day Structure & Systems Build and ongoing Advisory & Operations Partner for founders at $100K–$500K.",
 }
 
+const BOOK_CALL = "https://calendar.app.google/9eJEpYdDz9APFzFh7";
+
+const offers = [
+  {
+    label: "STEP 1 · DIAGNOSE · $1,200",
+    title: "Systems Audit & Action Plan",
+    line: "Clarity meets strategy, because you can’t fix what you can’t see.",
+    body: "A strategic deep-dive into how your business actually runs. We assess your tools, workflows and backend structure, then hand you a clear, prioritised plan.",
+    includes: [
+      "90-minute diagnostic session",
+      "Full systems and tech-stack audit",
+      "Workflow analysis, internal and client-facing",
+      "Gaps and bottlenecks mapped",
+      "Tool recommendations",
+      "Prioritised action plan",
+      "60-minute walkthrough of findings",
+    ],
+    smallPrint: "One-time fee, delivered within 2 weeks. Credited in full toward the Build if booked within 30 days.",
+    button: "Start with an audit",
+    image: p4,
+  },
+  {
+    label: "STEP 2 · BUILD · (SIGNATURE OFFER · 90 DAYS) · $7,500",
+    title: "Structure & Systems Build",
+    line: "A full backend transformation: designed, installed and rolled out.",
+    body: "Our signature engagement. We diagnose, design and install the structure your business runs on, then lead the rollout with your team so it actually sticks.",
+    timeline: [
+      { month: "Month 1", text: "Diagnose and design" },
+      { month: "Month 2", text: "Build" },
+      { month: "Month 3", text: "Roll out and refine" },
+    ],
+    includes: [
+      "Operating blueprint",
+      "Client journey design",
+      "CRM build-out (Dubsado, HoneyBook or Notion)",
+      "Project management setup (ClickUp, Notion, Asana, Airtable or Trello)",
+      "SOP library",
+      "Integrations and automations",
+      "Team training",
+      "Weekly check-ins plus 30 days of support after handover",
+    ],
+    smallPrint: "50% to begin, 50% at handover, or 3 monthly payments of $2,650.",
+    button: "Build my backend",
+    image: p2,
+  },
+  {
+    label: "STEP 3 · SUSTAIN · FROM $2,500/MONTH",
+    title: "Advisory & Operations Partner",
+    line: "Your long-term operations partner for sustained excellence.",
+    body: "Senior operations leadership without a full-time hire. We run the rhythm of your business, lead your team and projects, and refine the structure as you scale.",
+    includes: [
+      "Monthly strategy session",
+      "Weekly Zoom check-ins",
+      "Team oversight and delegation tracking",
+      "Program and project leadership",
+      "Client onboarding and communication",
+      "SOP creation and upkeep",
+      "Systems monitoring",
+      "Executive support across inbox, calendar and priorities",
+    ],
+    smallPrint: "3-month minimum, billed monthly. Final scope confirmed in your proposal.",
+    button: "Explore a partnership",
+    image: p1,
+  },
+];
+
+const alsoAvailable = [
+  {
+    title: "Business Strategy VIP Day",
+    price: "$2,500",
+    text: "A full-day (7-hour) 1:1 working session on what’s stuck. You leave with a written action plan within 48 hours and 14 days of email support.",
+  },
+  {
+    title: "Program & Event Launch Support",
+    price: "from $3,000",
+    text: "End-to-end management for your next program launch or live event: timelines, owners, tech setup, promo emails, onboarding and a post-launch debrief.",
+  },
+];
+
+const process = [
+  {
+    id: "01",
+    head: "Discovery & fit call",
+    text: "A 30-minute conversation to align on goals and the right offer.",
+  },
+  {
+    id: "02",
+    head: "Proposal, agreement & onboarding",
+    text: "A tailored proposal, then your onboarding packet.",
+  },
+  {
+    id: "03",
+    head: "Strategy, setup & implementation",
+    text: "The heart of the work, with regular updates and checkpoints.",
+  },
+  {
+    id: "04",
+    head: "Review, handover & ongoing support",
+    text: "A final walkthrough, then monthly support or post-project guidance.",
+  },
+];
+
 const page = () => {
-  const serviceOfferings = [
-    {
-      id: "01",
-      title: "Business Support Retainer",
-      subtitle: "Your right hand in operations—on an ongoing basis.",
-      description: "This high-touch retainer is designed for founders who need consistent, professional support with running their backend operations. From client experience and program logistics to task delegation and admin flow, we'll be your dedicated support specialist who understands your vision—and executes with excellence.",
-      features: [
-        "Ongoing executive & administrative support",
-        "Client onboarding & communication management",
-        "Program and project coordination",
-        "Calendar, email, and task management",
-        "SOP creation and documentation",
-        "Team oversight and delegation tracking",
-        "Backend optimization and systems monitoring",
-        "Weekly Zoom check-ins"
-      ],
-      investment: "Begins at $1000",
-      cta: "Let's explore if this is the right fit",
-      image: p1
-    },
-    {
-      id: "02",
-      title: "Business Systems Build-Out",
-      subtitle: "A full backend transformation—done in 30 days.",
-      description: "If you're overwhelmed by scattered systems, no clear workflows, or a backend that doesn't support your growth—this is for you. We build a streamlined operations system from the ground up using tools like Dubsado, ClickUp, Notion, and Airtable. You'll walk away with a backend that finally makes sense.",
-      features: [
-        "CRM Build-Out (Dubsado, HoneyBook, or Notion)",
-        "– Client forms, contracts, proposals, automations, canned emails, portals",
-        "Task & Project Management Setup (ClickUp, Notion, Asana, Airtable, or Trello)",
-        "– Task boards, SOP library, team space, content calendar",
-        "SOP Creation & Documentation",
-        "– Onboarding, offboarding, launch support, team roles",
-        "Tool integration & walkthrough training"
-      ],
-      investment: "$3,500",
-      paymentPlan: "Payment Plan: 50% upfront | 50% at completion",
-      cta: "Ready to build your dream backend?",
-      image: p2
-    },
-    {
-      id: "03",
-      title: "Systems Wipe",
-      subtitle: "Declutter. Refresh. Reclaim your ease.",
-      description: "If your business backend feels chaotic, bloated, or just \"not working anymore,\" this is your clean slate. The Systems Wipe is for founders who already have systems in place—but need them reorganized, optimized, and refreshed without starting from scratch. We'll go into your systems, clean up what's no longer serving you, and rebuild your workflows with more clarity, simplicity, and flow.",
-      features: [
-        "Backend system cleanup (CRM, task managers, folders, emails)",
-        "Reorganized workflows",
-        "Tool and task alignment",
-        "Refreshed SOPs and templates",
-        "Full walkthrough of your new structure"
-      ],
-      investment: "$2000",
-      cta: "Let's bring order back to your business.",
-      image: p3
-    },
-    {
-      id: "04",
-      title: "Systems Audit & Action Plan",
-      subtitle: "Not sure what's wrong? Let us take a look.",
-      description: "This is the perfect offer for founders who feel something's off in their backend—but can't quite put their finger on it. We'll audit your current systems, tools, workflows, and client journey, and deliver a tailored, high-level report outlining what's working, what's not, and what needs to change.",
-      features: [
-        "A full backend systems & tech audit",
-        "Identification of gaps, redundancies, and bottlenecks",
-        "A customized action plan to streamline and improve your operations",
-        "Recommendations on tools and structure to move forward confidently"
-      ],
-      investment: "$650",
-      note: "(one-time fee)",
-      cta: "Want clarity on your backend?",
-      image: p4
-    },
-    {
-      id: "05",
-      title: "Program | Offer Launch Support",
-      subtitle: "High-level operational support for your next signature offer or program.",
-      description: "This one-time, project-based service is perfect for entrepreneurs preparing for a major launch and need an expert to manage all the operational moving pieces. We handle the backend so you can stay focused on showing up and selling with confidence.",
-      features: [
-        "End-to-end launch operations support",
-        "Program workflow & delivery setup",
-        "Promo Emails Support",
-        "Tech tool setup & integrations",
-        "Launch SOPs and templates",
-        "Client onboarding process for new enrollments",
-        "Post-launch debrief & recommendations"
-      ],
-      investment: "Custom, based on scope and timeline",
-      cta: "Ready to launch with confidence?",
-    image: p6
-    }
-  ];
-
-  const process = [
-    {
-      id: "01",
-      head: "Discovery & Fit Call",
-      text: "We begin with a personalized call to explore your current needs, business goals, and the challenges you're facing. ",
-    },
-    {
-      id: "02",
-      head: "Proposal, Agreement & Onboarding",
-      text: "Once we've defined the scope, we'll send over a tailored proposal and service agreement. ",
-    },
-    {
-      id: "03",
-      head: "Strategy, Setup & Implementation",
-      text: "Depending on your selected offer, we move into the heart of the work—whether that's a full build-out, cleanup, audit, or ongoing support. ",
-    },
-    {
-      id: "04",
-      head: "Review, Delivery & Ongoing Support",
-      text: "We close out with a final walkthrough and deliverables handoff. For retainer clients, we seamlessly transition into monthly support. ",
-    },
-  ];
-
   return (
     <>
       <NavBar active={2} />
 
+      {/* Hero */}
       <div className="grid grid-cols-2 gap-24 md:gap-10 items-center md:grid-cols-none">
-        <Image src={dap3} alt="" className='w-full h-auto' priority placeholder="blur" sizes="(max-width: 800px) 100vw, 50vw"/>
+        <ImageReveal>
+          <Image src={dap3} alt="" className='w-full h-auto' priority placeholder="blur" sizes="(max-width: 800px) 100vw, 50vw"/>
+        </ImageReveal>
 
         <div className="md:text-center sm:px-xPadding md:px-[5%] md:pr-[5%] pr-[10%]">
-          <h2 className="bigText text-[80px] md:text-[38px] leading-[92px] md:leading-[48px]">
-            The Mide Lawal & Co.
-          </h2>
+          <Reveal as="h1" delay={0.2} y={36} duration={1.3} className="bigText text-[80px] md:text-[38px] leading-[92px] md:leading-[48px]">
+            Diagnose. Build. Sustain.
+          </Reveal>
 
-          <div className="w-4/5 md:w-full mt-[25px] md:mt-[18px] flex flex-col gap-2">
-            <p>You didn't start your business to get buried in the backend.</p>
-            
-            <p>That's where we come in.</p>
-            
-            <p>At <b>The Mide Lawal & Co.</b>, we partner with high-level entrepreneurs to streamline, systemize, and scale their operations with excellence. From refining your backend to optimizing your client experience, we offer premium business operations support designed to help you reclaim your time and elevate how your business runs behind the scenes.
-            </p>
-            Whether you need dedicated support, a full systems build, or a high-level audit, we offer tailored services that meet you exactly where you are—and help you move with more clarity, structure, and ease.
-          </div>
+          <Reveal delay={0.5} className="w-4/5 md:w-full mt-[25px] md:mt-[18px] flex flex-col gap-6 md:items-center">
+            <p>Every engagement follows one path. Start where you are, and move forward when you’re ready.</p>
+
+            <Link href={BOOK_CALL} target="_blank">
+              <button className="flex border-2 border-black gap-2 items-center p-3 w-fit uppercase bz hover-black">
+                Book a fit call <RiArrowRightLine />
+              </button>
+            </Link>
+          </Reveal>
         </div>
       </div>
 
-      <Marque />
+      <Reveal y={16}>
+        <Marque />
+      </Reveal>
 
+      {/* Who we work with */}
       <div className="bg-white py-yPadding  md:py-[40px]  px-xPadding sm:px-xPadding md:px-[5%] sm:text-center">
         <TwoWay>
           <div className="hidden md:block">
-            <Image src={dap4} alt="" className='w-full h-auto' placeholder="blur" sizes="100vw"/>
+            <ImageReveal>
+              <Image src={dap4} alt="" className='w-full h-auto' placeholder="blur" sizes="100vw"/>
+            </ImageReveal>
           </div>
 
-          <div className="flex flex-col gap-5 md:text-center">
-            <h2 className="bigText text-[40px] md:text-[32px] leading-[55px] md:leading-[38px]">
-              Let`s make your CEO role a breeze so you can enjoy the life and
-              business of your dream!
+          <Reveal delay={0.15} className="flex flex-col gap-5 md:text-center">
+            <h2 className="bigText text-[48px] md:text-[34px] leading-[62px] md:leading-[42px]">
+              Who we work with
             </h2>
 
-            <div className="flex flex-col gap-6">
-              <p>
-                Led by Mide Lawal, a Business Operations & Systems Strategist with 7 years of experience, our firm is built on the belief that a well-run business is a sustainable business. We've worked with over 30+ high-level entrepreneurs across industries—supporting everything from service-based providers to product based brand owners.
-              </p>
-              <p>
-                At The Mide Lawal & Co., we don't just manage tasks—we build systems that think ahead for you. Our mission is to help you design a business backend that feels clean, powerful, and beautifully aligned with how you want to lead.
-              </p>
-              <div className="flex flex-col gap-3">
-                <p className="font-semibold">We believe in:</p>
-                <ul className="flex flex-col gap-2 pl-4">
-                  <li className="flex items-center gap-2">
-                    <span className="text-lg">+</span>
-                    <span>Intentional structure</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-lg">+</span>
-                    <span>Luxurious client experiences</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-lg">+</span>
-                    <span>Thoughtful delegation</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-lg">+</span>
-                    <span>Quiet, consistent excellence</span>
-                  </li>
-                </ul>
-              </div>
-              <p>
-                Let's make the backend of your business just as remarkable as what your clients see on the outside.
-              </p>
-            </div>
-          </div>
+            <p>
+              We partner with coaches, consultants, speakers and expert-led brands doing $100K–$500K a year: founders who are visible and selling well, but still holding every thread behind the scenes.
+            </p>
+          </Reveal>
 
           <div className="md:hidden">
-            <Image src={services2} alt="" className='w-full h-auto' sizes="45vw"/>
+            <ImageReveal>
+              <Image src={services2} alt="" className='w-full h-auto' sizes="45vw"/>
+            </ImageReveal>
           </div>
         </TwoWay>
       </div>
 
-      <div className="bg-primary2 px-xPadding py-[60px] md:py-[40px]">
-        <h2 className="bigText text-[50px] text-center w-9/12 md:w-full md:text-[38px] capitalize md:leading-[38px] m-auto mb-10">
-          Our Services
-        </h2>
+      {/* Offers */}
+      <div className="bg-primary2 px-xPadding py-[60px] md:py-[40px] flex flex-col gap-[80px] md:gap-[50px]">
+        {offers.map((o, i) => (
+          <div key={i} className={`${i % 2 === 1 ? "bg-white" : ""} p-8 md:p-6`}>
+            <TwoWay>
+              <Reveal className="flex flex-col gap-6 md:text-center md:items-center">
+                <p className="uppercase tracking-[0.15em] text-[13px] font-semibold">{o.label}</p>
 
-        <div className="flex flex-col gap-10">
-          {serviceOfferings.map((service, index) => (
-            <div key={service.id} className={`${index % 2 === 1 ? 'bg-white' : ''} rounded-lg p-8 md:p-6`}>
-              <TwoWay >
-                <div className="flex flex-col gap-6">
-                  <div className="flex items-center gap-4">
-                    <div className="bg-[#E6E1DB] w-16 h-16 rounded-full flex items-center justify-center bigText text-2xl font-bold">
-                      {service.id}
-                    </div>
-                    <div>
-                      <h3 className="bigText text-[32px] md:text-[28px] font-bold">
-                        {service.title}
-                      </h3>
-                      <p className="text-lg md:text-base text-gray-600 italic">
-                        {service.subtitle}
-                      </p>
-                    </div>
-                  </div>
-
-                  <p className="text-lg md:text-base leading-relaxed">
-                    {service.description}
-                  </p>
-
-                  <div className="border-l-4 border-l-black px-6 flex flex-col gap-4">
-                    <h4 className="font-semibold text-lg">What's included:</h4>
-                    <div className="flex flex-col gap-3">
-                      {service.features.map((feature, i) => (
-                        <div key={i} className="flex gap-3 items-start">
-                          <RiCheckDoubleLine className="text-green-600 mt-1 flex-shrink-0" />
-                          <p className="text-base">{feature}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col gap-3">
-                    <div className="flex items-center gap-2">
-                      <p className="font-bold text-lg">Investment: {service.investment}</p>
-                      {service.note && <span className="text-sm text-gray-600">{service.note}</span>}
-                    </div>
-                    {service.paymentPlan && (
-                      <p className="text-sm text-gray-600">{service.paymentPlan}</p>
-                    )}
-                  </div>
-
-                  <Link href="/contact-us">
-                    <button className="flex border-2 border-black gap-2 items-center px-6 py-3 w-fit uppercase font-bold hover:bg-black hover:text-white transition-colors duration-300">
-                      {service.cta} <RiArrowRightLine />
-                    </button>
-                  </Link>
+                <div className="flex flex-col gap-3">
+                  <h2 className="bigText text-[44px] md:text-[32px] leading-[56px] md:leading-[40px]">{o.title}</h2>
+                  <p className="text-lg md:text-base italic text-gray-600">{o.line}</p>
                 </div>
 
-                <div className="">
-                  <Image src={service.image} alt={service.title} className="w-full h-[800px] md:h-[400px] md:w-full object-cover " placeholder="blur" sizes="(max-width: 800px) 100vw, 45vw"/>
+                <p>{o.body}</p>
+
+                {o.timeline && (
+                  <div className="grid grid-cols-3 md:grid-cols-1 gap-4 w-full">
+                    {o.timeline.map((t, j) => (
+                      <div key={j} className="border-t-2 border-black pt-3 text-left md:text-center">
+                        <p className="bz uppercase">{t.month}</p>
+                        <p className="text-[15px]">{t.text}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                <div className="border-l-4 border-l-black pl-6 md:border-l-0 md:pl-0 md:border-t-4 md:border-t-black md:pt-5 flex flex-col gap-3 w-full">
+                  <h3 className="font-semibold text-lg">What’s included</h3>
+                  <Stagger as="ul" className="flex flex-col gap-2" gap={0.08}>
+                    {o.includes.map((f, j) => (
+                      <StaggerItem as="li" key={j} y={14} className="flex gap-3 items-start md:text-left">
+                        <RiCheckLine className="mt-1 flex-shrink-0" />
+                        <span>{f}</span>
+                      </StaggerItem>
+                    ))}
+                  </Stagger>
                 </div>
-              </TwoWay>
-            </div>
-          ))}
-        </div>
+
+                <p className="text-sm text-gray-600">{o.smallPrint}</p>
+
+                <Link href={BOOK_CALL} target="_blank">
+                  <button className="flex border-2 border-black gap-2 items-center px-6 py-3 w-fit uppercase bz hover-black">
+                    {o.button} <RiArrowRightLine />
+                  </button>
+                </Link>
+              </Reveal>
+
+              <ImageReveal>
+                <Image src={o.image} alt={o.title} className="w-full h-[800px] md:h-[400px] object-cover" placeholder="blur" sizes="(max-width: 800px) 100vw, 45vw"/>
+              </ImageReveal>
+            </TwoWay>
+          </div>
+        ))}
       </div>
 
-      <div className="bg-[#F8F6F4] px-xPadding py-yPadding md:py-[40px]">
-        <h2 className="bigText text-[50px] md:text-[40px] text-center">
-          THE PROCESS
-        </h2>
+      {/* Also available */}
+      <div className="bg-[#F8F6F4] px-xPadding py-yPadding md:py-[40px] flex flex-col gap-10 items-center">
+        <Reveal as="h2" className="bigText text-[50px] md:text-[36px] text-center">
+          Also available
+        </Reveal>
 
-        <div className="items-stretch grid grid-cols-4 mt-[40px] gap-5 md:grid-cols-none">
-          {process.map((pr, i) => {
-            return (
-              <div
-                key={i}
-                className="flex flex-col gap-1 justify-start items-center text-center bg-white py-10 px-5 h-full"
-              >
-                <h2 className="bg-[#E6E1DB] p-10 w-fit h-fit bigText text-[50px] cc">
-                  {pr.id}
-                </h2>
-
-                <h2 className="bigText text-[20px]">{pr.head}</h2>
-
-                <p className="text-[14px] flex-1">{pr.text}</p>
+        <Stagger className="grid grid-cols-2 md:grid-cols-1 gap-8 w-full" gap={0.2}>
+          {alsoAvailable.map((a, i) => (
+            <StaggerItem key={i} className="bg-white p-10 md:p-6 flex flex-col gap-4">
+              <div className="flex flex-col gap-1">
+                <h3 className="bigText text-[30px] md:text-[24px]">{a.title}</h3>
+                <p className="uppercase tracking-[0.15em] text-[13px] font-semibold">{a.price}</p>
               </div>
-            );
-          })}
-        </div>
+              <p>{a.text}</p>
+            </StaggerItem>
+          ))}
+        </Stagger>
       </div>
 
+      {/* Process */}
+      <div className="bg-primary2 px-xPadding py-yPadding md:py-[40px]">
+        <Reveal as="h2" className="bigText text-[50px] md:text-[36px] text-center">
+          Designed for ease and excellence.
+        </Reveal>
+
+        <Stagger className="items-stretch grid grid-cols-4 mt-[40px] gap-5 md:grid-cols-none" gap={0.18}>
+          {process.map((pr, i) => (
+            <StaggerItem
+              key={i}
+              className="flex flex-col gap-1 justify-start items-center text-center bg-white py-10 px-5 h-full"
+            >
+              <h3 className="bg-[#E6E1DB] p-10 w-fit h-fit bigText text-[50px] cc">
+                {pr.id}
+              </h3>
+
+              <h3 className="bigText text-[20px]">{pr.head}</h3>
+
+              <p className="text-[14px] flex-1">{pr.text}</p>
+            </StaggerItem>
+          ))}
+        </Stagger>
+      </div>
+
+      {/* Testimonial */}
       <div className="grid grid-cols-2 justify-center md:flex md:flex-col-reverse">
-        <div className="flex flex-col justify-center gap-3 pl-[20%] pr-[7%] md:px-xPadding md:text-center md:py-20 btm">
-          <h2 className="bigText text-[48px] md:text-[32px]">
-            Mide has simplified my life in many ways than I can articulate!
+        <Reveal className="flex flex-col justify-center gap-5 pl-[20%] pr-[7%] md:px-xPadding md:text-center md:py-20 btm">
+          <h2 className="bigText text-[44px] md:text-[32px] leading-[60px] md:leading-[40px]">
+            “Mide has simplified my life in more ways than I can articulate.”
           </h2>
 
-          <p>
-            Working with Mide over the last couple of months and years has been
-            extremely beautiful. She does not only give you value for your
-            money, but she also goes above and beyond her job description.
-          </p>
+          <p className="text-[24px] md:text-[18px] uppercase">Morenike Molehin, Founder, Grow With Renny</p>
+        </Reveal>
 
-          <p className="text-[24px] md:text-[18px]">MORENIKE MOLEHIN</p>
-        </div>
-
-        <Image src={mm} alt="" className='w-full h-auto' sizes="(max-width: 800px) 100vw, 50vw"/>
+        <ImageReveal>
+          <Image src={mm} alt="" className='w-full h-auto' sizes="(max-width: 800px) 100vw, 50vw"/>
+        </ImageReveal>
       </div>
 
+      {/* Final call to action */}
       <div className="relative md:fs md:static fs fs2 md:fs2">
-        <Image src={ex} alt="" className="md:hidden w-full h-auto" placeholder="blur" sizes="100vw"/>
+        <ImageReveal className="md:hidden">
+          <Image src={ex} alt="" className="w-full h-auto" placeholder="blur" sizes="100vw"/>
+        </ImageReveal>
 
-        <div className="content absolute  md:static bottom-28 left-xPadding text-white w-3/5 flex flex-col gap-[40px] md:gap-[32px]">
-          <h2 className="text-[59px] md:text-[40px] bigText leading-[68px] md:leading-[48px]">
-            Ready to experience the reality of doing business with ease?
-          </h2>
+        <Reveal delay={0.3} className="content absolute  md:static bottom-28 left-xPadding text-white w-3/5 flex flex-col gap-[40px] md:gap-[32px]">
+          <div className="flex flex-col gap-3">
+            <h2 className="text-[59px] md:text-[40px] bigText leading-[68px] md:leading-[48px]">
+              Not sure where to start?
+            </h2>
 
-          <Link href={"/contact-us"}>
+            <p>Book a 30-minute fit call and we’ll find the right path for your business.</p>
+          </div>
+
+          <Link href={BOOK_CALL} target="_blank">
             <div className="px-6 py-3 gap-3 bg-transparent bz border-2 md:m-auto border-white w-fit flex items-center hover">
-              WORK WITH ME <RiArrowRightLine />
+              Book a fit call <RiArrowRightLine />
             </div>
           </Link>
-        </div>
+        </Reveal>
       </div>
 
       <Footer />
