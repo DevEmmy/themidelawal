@@ -8,9 +8,7 @@ import React from "react";
 import { Reveal, Stagger, StaggerItem, ImageReveal } from "../../components/Reveal";
 import { RiArrowRightLine, RiCheckLine } from "react-icons/ri";
 import dap3 from "../../../public/DAP3.jpg";
-import dap4 from "../../../public/DAP4.jpg";
-import services2 from "../../../public/services2.webp";
-import mm from "../../../public/mm.webp";
+import mm from "../../../public/morenike.jpg";
 import ex from "../../../public/ex.jpg";
 import p1 from "../../../public/p1.jpg";
 import p2 from "../../../public/p2.jpg";
@@ -131,7 +129,7 @@ const page = () => {
       {/* Hero */}
       <div className="grid grid-cols-2 gap-24 md:gap-10 items-center md:grid-cols-none">
         <ImageReveal>
-          <Image src={dap3} alt="" className='w-full h-auto' priority placeholder="blur" sizes="(max-width: 800px) 100vw, 50vw"/>
+          <Image src={"/./16.jpg"} alt="" className='w-full h-auto' priority width={1000} height={1000}  sizes="(max-width: 800px) 100vw, 50vw"/>
         </ImageReveal>
 
         <div className="md:text-center sm:px-xPadding md:px-[5%] md:pr-[5%] pr-[10%]">
@@ -141,6 +139,16 @@ const page = () => {
 
           <Reveal delay={0.5} className="w-4/5 md:w-full mt-[25px] md:mt-[18px] flex flex-col gap-6 md:items-center">
             <p>Every engagement follows one path. Start where you are, and move forward when you’re ready.</p>
+
+            <div className="flex flex-col gap-3 border-t border-black/20 pt-6">
+              <h2 className="bigText text-[32px] md:text-[26px] leading-[40px] md:leading-[34px]">
+                Who we work with
+              </h2>
+
+              <p>
+                We partner with coaches, consultants, speakers and expert-led brands doing $100K–$500K a year: founders who are visible and selling well, but still holding every thread behind the scenes.
+              </p>
+            </div>
 
             <Link href={BOOK_CALL} target="_blank">
               <button className="flex border-2 border-black gap-2 items-center p-3 w-fit uppercase bz hover-black">
@@ -155,35 +163,12 @@ const page = () => {
         <Marque />
       </Reveal>
 
-      {/* Who we work with */}
-      <div className="bg-white py-yPadding  md:py-[40px]  px-xPadding sm:px-xPadding md:px-[5%] sm:text-center">
-        <TwoWay>
-          <div className="hidden md:block">
-            <ImageReveal>
-              <Image src={dap4} alt="" className='w-full h-auto' placeholder="blur" sizes="100vw"/>
-            </ImageReveal>
-          </div>
-
-          <Reveal delay={0.15} className="flex flex-col gap-5 md:text-center">
-            <h2 className="bigText text-[48px] md:text-[34px] leading-[62px] md:leading-[42px]">
-              Who we work with
-            </h2>
-
-            <p>
-              We partner with coaches, consultants, speakers and expert-led brands doing $100K–$500K a year: founders who are visible and selling well, but still holding every thread behind the scenes.
-            </p>
-          </Reveal>
-
-          <div className="md:hidden">
-            <ImageReveal>
-              <Image src={services2} alt="" className='w-full h-auto' sizes="45vw"/>
-            </ImageReveal>
-          </div>
-        </TwoWay>
-      </div>
-
       {/* Offers */}
       <div className="bg-primary2 px-xPadding py-[60px] md:py-[40px] flex flex-col gap-[80px] md:gap-[50px]">
+        <Reveal as="h2" className="bigText text-[56px] md:text-[38px] leading-[64px] md:leading-[44px] text-center -mb-[40px] md:-mb-[20px]">
+          Our offers
+        </Reveal>
+
         {offers.map((o, i) => (
           <div key={i} className={`${i % 2 === 1 ? "bg-white" : ""} p-8 md:p-6`}>
             <TwoWay>

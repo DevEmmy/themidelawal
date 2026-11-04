@@ -14,8 +14,9 @@ const Hero = () => {
     //         Creating a seamless entrepreneurial experience through support, structure and strategy
     //     </div>
     // </div>
-    <div className='w-full h-auto'>
-      <Image src={heroImage} alt="" className='!w-[100vw] h-auto' priority width={100} height={100} sizes="100vw"/>
+    // overflow-hidden + negative top margin crops the beige strip baked into the top of home-hero.png (~43px of 1366px width)
+    <div className='w-full h-auto overflow-hidden'>
+      <Image src={heroImage} alt="" className='!w-[100vw] h-auto block -mt-[3.2%]' priority sizes="100vw"/>
     </div>
   )
 }

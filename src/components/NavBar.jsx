@@ -33,19 +33,24 @@ const NavBar = ({active = 0}) => {
     ]
   return (
     <>
-    <div className='w-full relative bg-primary1 px-[5%] md:flex md:justify-between flex items-center py-5 justify-between'>
+    <div className='w-full relative bg-primary1 px-[5%] md:flex md:justify-between flex items-center gap-10 py-5 justify-between'>
         <Link href={"/"}>
-            <p className='bigText text-logoText md:text-[24px] font-bold'>THE MIDE LAWAL & CO.</p>
+            <p className='bigText text-logoText min-[1281px]:max-[1536px]:text-[30px] min-[801px]:max-[1280px]:text-[26px] md:text-[24px] font-bold whitespace-nowrap'>THE MIDE LAWAL & CO.</p>
         </Link>
 
-        <div className='flex justify-between uppercase gap-[22px] items-center text-pg md:hidden '>
-            <div className='flex gap-[22px] items-center'>
+        <div className='flex justify-between uppercase gap-[32px] xl:gap-[20px] items-center text-pg md:hidden whitespace-nowrap'>
+            <div className='flex gap-[14px] xl:gap-[10px] items-center'>
                 {
                 nav.map((data, i)=>{
                     return(
-                        <a key={i} href={data.link} className={`pb-2 ${active === i && "border-b-2 border-b-black"}`}> 
-                            {data.title}
-                        </a>
+                        <React.Fragment key={i}>
+                            {i > 0 && (
+                                <span aria-hidden="true" className='pb-2 border-b-2 border-b-transparent text-black/40 select-none'>•</span>
+                            )}
+                            <a href={data.link} className={`pb-2 border-b-2 ${active === i ? "border-b-black" : "border-b-transparent"}`}>
+                                {data.title}
+                            </a>
+                        </React.Fragment>
                     )
                 })
             }

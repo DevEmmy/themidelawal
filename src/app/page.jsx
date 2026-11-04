@@ -37,7 +37,7 @@ export default function Home() {
       <div className="bg-primary2 mt-[120px] md:mt-[30px] py-[120px] md:py-[60px] px-xPadding md:text-center">
       <TwoWay>
         <ImageReveal>
-          <Image src="/./DAP1.jpg" alt="" className='w-full h-auto' unoptimized width={1000} height={1000}/>
+          <Image src="/./4.jpg" alt="" className='w-full h-auto' unoptimized width={1000} height={1000}/>
         </ImageReveal>
 
         <Reveal delay={0.2} className='flex flex-col gap-5'>
@@ -171,7 +171,7 @@ export default function Home() {
       <div className="my-yPadding px-xPadding md:px-[5%]">
       <TwoWay>
         <ImageReveal>
-          <Image src="/./mide-long.jpg" alt="" className='w-full h-[800px] object-cover' width={1000} height={1000} unoptimized/>
+          <Image src="/./8.jpg" alt="" className='w-full h-[800px] object-cover' width={1000} height={1000} unoptimized/>
         </ImageReveal>
 
         <Reveal delay={0.2} className='flex flex-col gap-[40px] justify-between md:text-center w-[500px] md:w-full'>
@@ -202,13 +202,13 @@ export default function Home() {
           <Image src="/./mide-footer.jpg" alt="" className='w-full h-[500px] object-cover object-top' width={1000} height={1000} unoptimized/>
         </ImageReveal>
 
-        <Reveal delay={0.3} className="content absolute md:static bottom-28 left-[10%] text-white w-2/5 flex gap-[40px] flex-col md:gap-[32px]">
+        <Reveal delay={0.3} className="content absolute md:static bottom-28 left-[10%] text-white w-3/5 flex gap-[40px] flex-col md:gap-[32px]">
           <div className='flex flex-col gap-3'>
           <h2 className="text-[60px] md:text-[40px] bigText leading-[68px] md:leading-[55px]">
             Your vision deserves structure.
           </h2>
 
-          <p>
+          <p className='w-3/5'>
             Book a 30-minute fit call. We’ll talk about where your business is, where it’s going, and the structure it needs next.
           </p>
           </div>

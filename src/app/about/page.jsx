@@ -11,7 +11,7 @@ import about from '../../../public/about.jpg'
 import dap2 from '../../../public/DAP2.jpg'
 import mideAbout1 from '../../../public/mide-about1.jpg'
 import sa from '../../../public/sa.webp'
-import fun from '../../../public/fun.webp'
+import FunFacts from '../../components/FunFacts'
 import mideFooter from '../../../public/mide-footer.jpg'
 import heroImage from "../../../public/about-hero.png"
 
@@ -27,13 +27,6 @@ const beliefs = [
     { title: "Built to last.", text: "A system is only good if it keeps working after we’ve handed it over." },
 ]
 
-const funFacts = [
-    "I’m always curious about God, and that curiosity shapes how I live and work.",
-    "You’ll find me at yoga, Pilates or barre.",
-    "My favourite evening is my couch and a good mystery or crime show.",
-    "Unpopular opinion: I don’t like plantain.",
-    "Interior design and organising spaces are how I relax.",
-]
 
 const page = () => {
   return (
@@ -79,7 +72,7 @@ const page = () => {
         <div className='max-w-[1280px] mx-auto'>
         <TwoWay>
             <ImageReveal className='w-full max-w-[480px] ml-auto md:mx-auto'>
-                <Image src={mideAbout1} alt="" placeholder="blur" sizes="(max-width: 800px) 100vw, 480px"/>
+                <Image src="/./5.jpg" width={1000} height={1000} alt="" sizes="(max-width: 800px) 100vw, 480px"/>
             </ImageReveal>
 
             <Reveal delay={0.2} className='flex flex-col gap-5 md:text-center'>
@@ -150,28 +143,7 @@ const page = () => {
         </ImageReveal>
       </div>
 
-      <div className="bg-white my-yPadding px-xPadding md:px-[5%] max-w-[1280px] mx-auto">
-        <TwoWay>
-
-        <ImageReveal className='w-full max-w-[496px] ml-auto md:mx-auto'>
-            <Image src={fun} alt="" className='w-full h-auto' sizes="(max-width: 800px) 100vw, 496px"/>
-        </ImageReveal>
-
-            <div className='flex flex-col gap-6 md:text-center'>
-                <Reveal as="h2" className="bigText text-[48px] md:text-[38px]">
-                    A few fun facts.
-                </Reveal>
-
-                <Stagger as="ul" className='flex flex-col gap-4' gap={0.15} delay={0.1}>
-                    {funFacts.map((f, i) => (
-                        <StaggerItem as="li" key={i} y={20} className='border-t border-black/20 pt-4'>
-                            <p>{f}</p>
-                        </StaggerItem>
-                    ))}
-                </Stagger>
-            </div>
-        </TwoWay>
-      </div>
+      <FunFacts />
 
       <div className='relative my-32 md:my-16 md:fs md:static fs'>
         <ImageReveal className='md:hidden'>
