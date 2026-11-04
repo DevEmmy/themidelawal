@@ -13,6 +13,7 @@ import mideAbout1 from '../../../public/mide-about1.jpg'
 import sa from '../../../public/sa.webp'
 import fun from '../../../public/fun.webp'
 import mideFooter from '../../../public/mide-footer.jpg'
+import heroImage from "../../../public/about-hero.png"
 
 export const metadata = {
   title: "About Mide Lawal · The Mide Lawal & Co.",
@@ -54,7 +55,7 @@ const page = () => {
             {/* <Image src={about} alt="" className='w-full h-auto' priority placeholder="blur" sizes="33vw"/>
             <Image src={about} alt="" className='w-full h-auto' priority placeholder="blur" sizes="33vw"/>
             <Image src={about} alt="" className='w-full h-auto' priority placeholder="blur" sizes="33vw"/> */}
-            <Image src="/./about-hero.png"  alt="" className='!w-[100vw] h-auto' priority width={100} height={100} sizes="100vw"/>
+            <Image src={heroImage}  alt="" className='!w-[100vw] h-auto' priority width={100} height={100} sizes="100vw"/>
         </div>
         </ImageReveal>
 

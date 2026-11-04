@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import homepage from '../../public/homepage.jpg'
+import heroImage from "../../public/home-hero.png"
 
 const Hero = () => {
   return (
@@ -14,7 +15,7 @@ const Hero = () => {
     //     </div>
     // </div>
     <div className='w-full h-auto'>
-      <Image src="/./home-hero.png" alt="" className='!w-[100vw] h-auto' priority width={100} height={100} sizes="100vw"/>
+      <Image src={heroImage} alt="" className='!w-[100vw] h-auto' priority width={100} height={100} sizes="100vw"/>
     </div>
   )
 }
