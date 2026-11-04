@@ -14,7 +14,7 @@ const Hero = () => {
     //     </div>
     // </div>
     <div className='w-full h-auto'>
-      <Image src={homepage} alt="" className='!w-[100%] h-auto' priority placeholder="blur" sizes="100vw"/>
+      <Image src="/./home-hero.png" alt="" className='!w-[100vw] h-auto' priority width={100} height={100} sizes="100vw"/>
     </div>
   )
 }

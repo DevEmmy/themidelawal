@@ -50,10 +50,11 @@ const page = () => {
         </section>
 
         <ImageReveal>
-        <div className="grid grid-cols-3">
+        <div className="">
+            {/* <Image src={about} alt="" className='w-full h-auto' priority placeholder="blur" sizes="33vw"/>
             <Image src={about} alt="" className='w-full h-auto' priority placeholder="blur" sizes="33vw"/>
-            <Image src={about} alt="" className='w-full h-auto' priority placeholder="blur" sizes="33vw"/>
-            <Image src={about} alt="" className='w-full h-auto' priority placeholder="blur" sizes="33vw"/>
+            <Image src={about} alt="" className='w-full h-auto' priority placeholder="blur" sizes="33vw"/> */}
+            <Image src="/./about-hero.png"  alt="" className='!w-[100vw] h-auto' priority width={100} height={100} sizes="100vw"/>
         </div>
         </ImageReveal>
 
@@ -74,8 +75,9 @@ const page = () => {
         </section>
 
     <div className="bg-primary2 py-yPadding md:py-[40px] md:px-[5%] px-xPadding">
+        <div className='max-w-[1280px] mx-auto'>
         <TwoWay>
-            <ImageReveal>
+            <ImageReveal className='w-full max-w-[480px] ml-auto md:mx-auto'>
                 <Image src={mideAbout1} alt="" placeholder="blur" sizes="(max-width: 800px) 100vw, 480px"/>
             </ImageReveal>
 
@@ -101,6 +103,7 @@ const page = () => {
             </p>
             </Reveal>
         </TwoWay>
+        </div>
       </div>
 
 
@@ -141,16 +144,16 @@ const page = () => {
           </p>
         </Reveal>
 
-        <ImageReveal>
-          <Image src={sa} alt="" sizes="(max-width: 800px) 100vw, 720px"/>
+        <ImageReveal className='h-full'>
+          <Image src={sa} alt="" className='w-full h-full object-cover object-top' sizes="(max-width: 800px) 100vw, 50vw"/>
         </ImageReveal>
       </div>
 
-      <div className="bg-white my-yPadding px-xPadding md:px-[5%]">
+      <div className="bg-white my-yPadding px-xPadding md:px-[5%] max-w-[1280px] mx-auto">
         <TwoWay>
 
-        <ImageReveal>
-            <Image src={fun} alt="" sizes="(max-width: 800px) 100vw, 496px"/>
+        <ImageReveal className='w-full max-w-[496px] ml-auto md:mx-auto'>
+            <Image src={fun} alt="" className='w-full h-auto' sizes="(max-width: 800px) 100vw, 496px"/>
         </ImageReveal>
 
             <div className='flex flex-col gap-6 md:text-center'>
@@ -171,7 +174,7 @@ const page = () => {
 
       <div className='relative my-32 md:my-16 md:fs md:static fs'>
         <ImageReveal className='md:hidden'>
-          <Image src={mideFooter} alt="" placeholder="blur" sizes="1440px"/>
+          <Image src={mideFooter} alt="" placeholder="blur" className='w-full h-auto max-h-[800px] object-cover' sizes="100vw"/>
         </ImageReveal>
 
         <Reveal delay={0.3} className="content absolute md:static bottom-28 left-[10%] text-white w-2/5 flex flex-col gap-[40px] md:gap-[20px]">
