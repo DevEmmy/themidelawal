@@ -2,6 +2,7 @@ import Footer from "../../components/Footer";
 import Marque from "../../components/Marque";
 import NavBar from "../../components/NavBar";
 import TwoWay from "../../components/TwoWay";
+import FitImage from "../../components/FitImage";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -124,31 +125,20 @@ const process = [
 const page = () => {
   return (
     <>
-      <NavBar active={2} />
+      <NavBar active={1} />
 
       {/* Hero */}
-      <div className="grid grid-cols-2 gap-24 md:gap-10 items-center md:grid-cols-none">
-        <ImageReveal>
-          <Image src={"/./16.jpg"} alt="" className='w-full h-auto' priority width={1000} height={1000}  sizes="(max-width: 800px) 100vw, 50vw"/>
-        </ImageReveal>
+      <div className="grid grid-cols-2 gap-24 md:gap-10 items-stretch md:grid-cols-none">
+        {/* fills the first screen: viewport height minus the ~90px nav bar */}
+        <FitImage src="/./16.jpg" imgClassName="object-top" minHeight="min-h-[calc(100vh-90px)]" priority />
 
-        <div className="md:text-center sm:px-xPadding md:px-[5%] md:pr-[5%] pr-[10%]">
+        <div className="md:text-center sm:px-xPadding md:px-[5%] md:pr-[5%] pr-[10%] py-[60px] md:py-0 flex flex-col justify-center">
           <Reveal as="h1" delay={0.2} y={36} duration={1.3} className="bigText text-[80px] md:text-[38px] leading-[92px] md:leading-[48px]">
             Diagnose. Build. Sustain.
           </Reveal>
 
           <Reveal delay={0.5} className="w-4/5 md:w-full mt-[25px] md:mt-[18px] flex flex-col gap-6 md:items-center">
             <p>Every engagement follows one path. Start where you are, and move forward when you’re ready.</p>
-
-            <div className="flex flex-col gap-3 border-t border-black/20 pt-6">
-              <h2 className="bigText text-[32px] md:text-[26px] leading-[40px] md:leading-[34px]">
-                Who we work with
-              </h2>
-
-              <p>
-                We partner with coaches, consultants, speakers and expert-led brands doing $100K–$500K a year: founders who are visible and selling well, but still holding every thread behind the scenes.
-              </p>
-            </div>
 
             <Link href={BOOK_CALL} target="_blank">
               <button className="flex border-2 border-black gap-2 items-center p-3 w-fit uppercase bz hover-black">
@@ -164,14 +154,14 @@ const page = () => {
       </Reveal>
 
       {/* Offers */}
-      <div className="bg-primary2 px-xPadding py-[60px] md:py-[40px] flex flex-col gap-[80px] md:gap-[50px]">
-        <Reveal as="h2" className="bigText text-[56px] md:text-[38px] leading-[64px] md:leading-[44px] text-center -mb-[40px] md:-mb-[20px]">
+      <div className="bg-primary2 px-xPadding py-[60px] md:py-[40px] flex flex-col gap-[56px] md:gap-[50px]">
+        <Reveal as="h2" className="bigText text-[56px] md:text-[38px] leading-[64px] md:leading-[44px] text-center -mb-[24px] md:-mb-[20px]">
           Our offers
         </Reveal>
 
         {offers.map((o, i) => (
           <div key={i} className={`${i % 2 === 1 ? "bg-white" : ""} p-8 md:p-6`}>
-            <TwoWay>
+            <TwoWay fit>
               <Reveal className="flex flex-col gap-6 md:text-center md:items-center">
                 <p className="uppercase tracking-[0.15em] text-[13px] font-semibold">{o.label}</p>
 
@@ -214,9 +204,7 @@ const page = () => {
                 </Link>
               </Reveal>
 
-              <ImageReveal>
-                <Image src={o.image} alt={o.title} className="w-full h-[800px] md:h-[400px] object-cover" placeholder="blur" sizes="(max-width: 800px) 100vw, 45vw"/>
-              </ImageReveal>
+              <FitImage src={o.image} alt={o.title} placeholder="blur" sizes="(max-width: 800px) 100vw, 45vw" />
             </TwoWay>
           </div>
         ))}

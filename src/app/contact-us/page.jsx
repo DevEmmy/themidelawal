@@ -16,7 +16,7 @@ export const metadata = {
 const page = () => {
   return (
     <div className="bg-[#F8F6F4]">
-      <NavBar active={4} />
+      <NavBar active={3} />
 
       <div className="bg-[#F8F6F4]">
         <ImageReveal>

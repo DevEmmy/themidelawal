@@ -15,10 +15,6 @@ const NavBar = ({active = 0}) => {
             link: "/"
         },
         {
-            title: "About",
-            link: "/about"
-        },
-        {
             title: "Work With Us",
             link: "/work-with-us"
         },

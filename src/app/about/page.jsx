@@ -6,6 +6,7 @@ import { RiArrowRightLine } from 'react-icons/ri'
 import NavBar from '../../components/NavBar'
 import Footer from '../../components/Footer'
 import TwoWay from '../../components/TwoWay'
+import FitImage from '../../components/FitImage'
 import { Reveal, Stagger, StaggerItem, ImageReveal } from '../../components/Reveal'
 import about from '../../../public/about.jpg'
 import dap2 from '../../../public/DAP2.jpg'
@@ -33,7 +34,7 @@ const page = () => {
     <>
         <NavBar active={1}/>
         
-        <section className='bg-primary2 text-center flex flex-col gap-5 items-center px-[10%] md:px-[5%] py-[100px] md:py-[50px]'>
+        <section className='bg-primary2 text-center flex flex-col gap-5 items-center px-[10%] md:px-[5%] py-[64px] md:py-[50px]'>
             <Reveal as="h1" delay={0.2} y={36} duration={1.3} className='bigText uppercase tracking-[0.12em] text-[56px] md:text-[32px] leading-[68px] md:leading-[42px]'>
                 About the Founder
             </Reveal>
@@ -48,7 +49,7 @@ const page = () => {
             {/* <Image src={about} alt="" className='w-full h-auto' priority placeholder="blur" sizes="33vw"/>
             <Image src={about} alt="" className='w-full h-auto' priority placeholder="blur" sizes="33vw"/>
             <Image src={about} alt="" className='w-full h-auto' priority placeholder="blur" sizes="33vw"/> */}
-            <Image src={heroImage}  alt="" className='!w-[100vw] h-auto' priority width={100} height={100} sizes="100vw"/>
+            <Image src={heroImage} alt="" className='!w-[100vw] h-auto' priority unoptimized/>
         </div>
         </ImageReveal>
 
@@ -70,10 +71,8 @@ const page = () => {
 
     <div className="bg-primary2 py-yPadding md:py-[40px] md:px-[5%] px-xPadding">
         <div className='max-w-[1280px] mx-auto'>
-        <TwoWay>
-            <ImageReveal className='w-full max-w-[480px] ml-auto md:mx-auto'>
-                <Image src="/./5.jpg" width={1000} height={1000} alt="" sizes="(max-width: 800px) 100vw, 480px"/>
-            </ImageReveal>
+        <TwoWay fit>
+            <FitImage src="/./5.jpg" imgClassName="object-top" sizes="(max-width: 800px) 100vw, 640px" />
 
             <Reveal delay={0.2} className='flex flex-col gap-5 md:text-center'>
             <h2 className='bigText text-[48px] md:text-[38px]'>
@@ -119,9 +118,7 @@ const page = () => {
             </Stagger>
             </div>
 
-            <ImageReveal>
-                <Image src={dap2} alt="" className='w-full h-auto' placeholder="blur" sizes="(max-width: 800px) 100vw, 45vw"/>
-            </ImageReveal>
+            <FitImage src={dap2} imgClassName="object-top" placeholder="blur" sizes="(max-width: 800px) 100vw, 45vw" />
         </div>
       </div>
 
@@ -145,7 +142,7 @@ const page = () => {
 
       <FunFacts />
 
-      <div className='relative my-32 md:my-16 md:fs md:static fs'>
+      <div className='relative my-16 md:my-16 md:fs md:static fs'>
         <ImageReveal className='md:hidden'>
           <Image src={mideFooter} alt="" placeholder="blur" className='w-full h-auto max-h-[800px] object-cover' sizes="100vw"/>
         </ImageReveal>

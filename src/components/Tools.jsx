@@ -124,7 +124,7 @@ const Tools = () => {
     <div className='flex bg-[#E6E1DB] md:flex-col md:gap-[20px]   px-[10%] md:px-[5%] py-5 md:py-[15px] justify-between'>
 
         <h1 className="bigText md:text-center leading-[63px] md:leading-[40px] text-[40px] md:text-[32px] bts text-left md:w-full md:m-auto w-[20%]">
-            Tools I Work With
+            Tools We Work With
         </h1>
 
         {/* <Slot>

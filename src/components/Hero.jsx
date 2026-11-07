@@ -16,7 +16,8 @@ const Hero = () => {
     // </div>
     // overflow-hidden + negative top margin crops the beige strip baked into the top of home-hero.png (~43px of 1366px width)
     <div className='w-full h-auto overflow-hidden'>
-      <Image src={heroImage} alt="" className='!w-[100vw] h-auto block -mt-[3.2%]' priority sizes="100vw"/>
+      {/* unoptimized: serve the original lossless PNG; re-encoding it to AVIF/WebP softens the baked-in lettering */}
+      <Image src={heroImage} alt="" className='!w-[100vw] h-auto block -mt-[3.2%]' priority unoptimized/>
     </div>
   )
 }

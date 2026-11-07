@@ -3,6 +3,8 @@ import Hero from '../components/Hero'
 import NavBar from '../components/NavBar'
 import Tools from '../components/Tools'
 import TwoWay from '../components/TwoWay'
+import FitImage from '../components/FitImage'
+import FunFacts from '../components/FunFacts'
 import Image from 'next/image'
 import Link from 'next/link'
 import { RiArrowRightLine } from "react-icons/ri"
@@ -26,6 +28,12 @@ const offers = [
   { title: "Advisory & Operations Partner", text: "Senior operations leadership, month after month." },
 ]
 
+const pillars = [
+  { title: "Clarity", text: "Everyone knows what happens next, who owns it and where to find it." },
+  { title: "Consistency", text: "Every client gets the same polished experience, whether it’s their first week or their fiftieth." },
+  { title: "Calm", text: "Fewer fires, fewer late nights, and a business that keeps moving when you step away." },
+]
+
 export default function Home() {
   return (
     <>
@@ -34,11 +42,9 @@ export default function Home() {
         <Hero />
       </ImageReveal>
 
-      <div className="bg-primary2 mt-[120px] md:mt-[30px] py-[120px] md:py-[60px] px-xPadding md:text-center">
-      <TwoWay>
-        <ImageReveal>
-          <Image src="/./4.jpg" alt="" className='w-full h-auto' unoptimized width={1000} height={1000}/>
-        </ImageReveal>
+      <div className="bg-primary2 mt-[64px] md:mt-[30px] py-[72px] md:py-[60px] px-xPadding md:text-center">
+      <TwoWay fit>
+        <FitImage src="/./4.jpg" imgClassName="object-top" />
 
         <Reveal delay={0.2} className='flex flex-col gap-5'>
           <p className='uppercase tracking-[0.2em] text-[14px]'>
@@ -51,6 +57,27 @@ export default function Home() {
 
           <p>
             The Mide Lawal & Co. is a strategy and operations advisory for expert-led brands that have outgrown their backend. We turn your vision into structure, and your structure into execution.
+          </p>
+
+          <p>
+            Behind every business that feels effortless to its clients is a backend that was built on purpose. That’s the part we build: the processes, people and rhythms that let your business deliver at the level it promises, every single time.
+          </p>
+
+          <p>
+            Most founders don’t need more hustle, more tools or another hire. They need someone to step back, see the whole picture and build the structure that ties it all together. That’s where we come in: part strategist, part architect, and the steady hand in the room.
+          </p>
+
+          <ul className='grid grid-cols-3 gap-6 md:grid-cols-1 md:gap-4 my-2'>
+            {pillars.map((p) => (
+              <li key={p.title} className='border-t border-black/20 pt-4 flex flex-col gap-1'>
+                <span className='bigText text-[24px] md:text-[22px]'>{p.title}</span>
+                <p className='text-[15px]'>{p.text}</p>
+              </li>
+            ))}
+          </ul>
+
+          <p>
+            Whether you’re preparing for your next season of growth or recovering from the last one, the structure you build now decides how far your business can go.
           </p>
 
           <div className='flex gap-4 md:flex-col md:items-center'>
@@ -67,14 +94,14 @@ export default function Home() {
             </Link>
           </div>
 
-          <p className='text-[14px] uppercase tracking-wide'>
+          <p className='bg-black text-white text-[14px] uppercase tracking-wide leading-[24px] px-5 py-3 w-fit self-start md:self-center'>
             35+ founders served · 7+ years building operations · US, UK, Canada, Nigeria
           </p>
         </Reveal>
       </TwoWay>
       </div>
 
-      <div className="bg-primary2 px-xPadding py-[140px] md:py-[70px] flex flex-col items-center text-center">
+      <div className="bg-primary2 px-xPadding py-[72px] md:py-[70px] flex flex-col items-center text-center">
         <Reveal as="h2" className='bigText text-[64px] md:text-[34px] leading-[78px] md:leading-[44px] max-w-[900px]'>
           Your marketing made a promise. Your operations have to keep it.
         </Reveal>
@@ -101,7 +128,7 @@ export default function Home() {
         <Tools />
       </Reveal>
 
-      <div className='bg-[#F8F6F4] px-xPadding py-[120px] md:py-[60px] flex flex-col items-center text-center gap-12 md:gap-8'>
+      <div className='bg-[#F8F6F4] px-xPadding py-[72px] md:py-[60px] flex flex-col items-center text-center gap-12 md:gap-8'>
         <Reveal className='flex flex-col gap-4 items-center'>
           <h2 className='bigText text-[59px] md:text-[40px] leading-[77px] md:leading-[48px]'>One clear path.</h2>
           <p className='max-w-[620px]'>
@@ -138,7 +165,7 @@ export default function Home() {
         </Reveal>
       </div>
 
-      <div className='btm px-xPadding py-[120px] md:py-[60px] flex flex-col items-center text-center gap-14 md:gap-10'>
+      <div className='btm px-xPadding py-[72px] md:py-[60px] flex flex-col items-center text-center gap-14 md:gap-10'>
         <Reveal as="h2" className='bigText text-[59px] md:text-[34px] leading-[77px] md:leading-[44px] max-w-[800px]'>
           What changes when the structure is right.
         </Reveal>
@@ -168,34 +195,40 @@ export default function Home() {
         </Reveal>
       </div>
 
-      <div className="my-yPadding px-xPadding md:px-[5%]">
-      <TwoWay>
-        <ImageReveal>
-          <Image src="/./8.jpg" alt="" className='w-full h-[800px] object-cover' width={1000} height={1000} unoptimized/>
-        </ImageReveal>
+      {/* Founder (migrated from the old About page: "How it all began" + "This is me in a nutshell") */}
+      <div id="founder" className="my-yPadding px-xPadding md:px-[5%] scroll-mt-6">
+      <TwoWay fit>
+        <FitImage src="/./8.jpg" imgClassName="object-top" />
 
-        <Reveal delay={0.2} className='flex flex-col gap-[40px] justify-between md:text-center w-[500px] md:w-full'>
+        <Reveal delay={0.2} className='flex flex-col gap-[16px] md:text-center max-w-[560px] md:max-w-none'>
+          <p className='uppercase tracking-[0.2em] text-[14px]'>
+            Meet the founder
+          </p>
 
-
-          <div className="flex flex-col gap-[16px]">
-          <h2 className='bigText text-[59px] md:text-[38px] tracking-[-0.5%]'>
+          <h2 className='bigText text-[59px] md:text-[38px] leading-[70px] md:leading-[46px] tracking-[-0.5%]'>
             They bring the vision. We build the structure.
           </h2>
 
           <p>
-            I’m Mide Lawal, founder of The Mide Lawal & Co. For more than seven years I’ve built the operations behind coaches, consultants, speakers and premium brands. I believe operations should feel like luxury: your backend should be as refined as what your clients see on the front end.
+            I’m Mide Lawal, founder of The Mide Lawal & Co. I’ve loved order for as long as I can remember. Long before I had a name for it, I was the one organising the room, the plan and the people.
           </p>
-          </div>
 
+          <p>
+            In 2020 I started supporting entrepreneurs behind the scenes, first as an assistant, then as a business and operations manager. Over seven years I’ve worked with 35+ businesses across the US, UK, Canada and Nigeria: coaches, consultants, speakers, agencies, fitness brands, a luxury hair brand and more.
+          </p>
 
-          <Link href="/about">
-          <button className='flex border-2 md:m-auto border-black gap-2 bz items-center p-3 w-fit uppercase hover-black'>
-            Get to know Mide <RiArrowRightLine />
-          </button>
-          </Link>
+          <p>
+            That range taught me something simple. Every growing business breaks in the same places: ideas outrun structure, the founder becomes the operating system, and the client experience starts to lag behind the brand. The Mide Lawal & Co. exists to fix that.
+          </p>
+
+          <p className='bigText text-[24px] md:text-[21px] leading-[34px] md:leading-[30px] border-l-2 border-black pl-5 mt-2 md:border-l-0 md:pl-0 md:border-t md:pt-4'>
+            My clients aren’t simply building businesses; they’re building legacies.
+          </p>
         </Reveal>
       </TwoWay>
       </div>
+
+      <FunFacts />
 
       <div className='relative md:fs md:static fs'>
         <ImageReveal className='md:hidden'>

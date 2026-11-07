@@ -79,7 +79,12 @@ form > div > input, textarea {
 }
 
 .btm{
-  background-image: url(../../public/bg-bg.jpg);
+  /* warm off-white wash over the plaster texture to keep it subtle; raise/lower the 0.75 to adjust */
+  background-image:
+    linear-gradient(rgba(248, 246, 244, 0.75), rgba(248, 246, 244, 0.75)),
+    url(../../public/bg-bg.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 @media screen and (max-width: 800px) {

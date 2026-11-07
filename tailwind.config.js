@@ -13,7 +13,7 @@ module.exports = {
       },
       spacing: {
         xPadding: "7.6%",
-        yPadding: "100px"
+        yPadding: "64px"
       },
       colors: {
         primary1: '#E6E1DB',

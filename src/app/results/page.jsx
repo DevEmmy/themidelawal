@@ -1,6 +1,7 @@
 import Footer from '../../components/Footer'
 import NavBar from '../../components/NavBar'
 import TwoWay from '../../components/TwoWay'
+import FitImage from '../../components/FitImage'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -93,10 +94,10 @@ const quotes = [
 const page = () => {
   return (
     <div className='bg-[#F8F6F4]'>
-        <NavBar active={3} />
+        <NavBar active={2} />
 
         {/* Hero */}
-        <div className='bg-[#EFEEEA] px-xPadding py-[100px] md:py-[50px] text-center flex flex-col items-center gap-5'>
+        <div className='bg-[#EFEEEA] px-xPadding py-[64px] md:py-[50px] text-center flex flex-col items-center gap-5'>
             <Reveal as="p" delay={0.1} y={14} className='uppercase tracking-[0.2em] text-[14px]'>
                 Client Results
             </Reveal>
@@ -111,12 +112,10 @@ const page = () => {
         </div>
 
         {/* Case studies */}
-        <div className='px-xPadding py-[80px] md:py-[40px] flex flex-col gap-[100px] md:gap-[60px]'>
+        <div className='px-xPadding py-[56px] md:py-[40px] flex flex-col gap-[64px] md:gap-[60px]'>
             {caseStudies.map((c, i) => (
-                <TwoWay key={i}>
-                    <ImageReveal className={i % 2 === 1 ? 'order-2 md:order-1' : ''}>
-                        <Image src={c.image} alt={c.client} placeholder="blur" className='w-full h-[640px] md:h-[400px] object-cover object-top' sizes="(max-width: 800px) 100vw, 45vw" />
-                    </ImageReveal>
+                <TwoWay key={i} fit>
+                    <FitImage src={c.image} alt={c.client} placeholder="blur" imgClassName="object-top" className={i % 2 === 1 ? 'order-2 md:order-1' : ''} sizes="(max-width: 800px) 100vw, 45vw" />
 
                     <Reveal delay={0.15} className={`flex flex-col gap-6 md:text-center ${i % 2 === 1 ? 'order-1 md:order-2' : ''}`}>
                         <div className='flex flex-col gap-1'>
