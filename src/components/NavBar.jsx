@@ -31,7 +31,7 @@ const NavBar = ({active = 0}) => {
     <>
     <div className='w-full relative bg-primary1 px-[5%] md:flex md:justify-between flex items-center gap-10 py-5 justify-between'>
         <Link href={"/"}>
-            <p className='bigText text-logoText min-[1281px]:max-[1536px]:text-[30px] min-[801px]:max-[1280px]:text-[26px] md:text-[24px] font-bold whitespace-nowrap'>THE MIDE LAWAL & CO.</p>
+            <p className='bigText text-logoText laptop:text-[30px] laptop-sm:text-[26px] md:text-[24px] font-bold whitespace-nowrap'>THE MIDE LAWAL & CO.</p>
         </Link>
 
         <div className='flex justify-between uppercase gap-[32px] xl:gap-[20px] items-center text-pg md:hidden whitespace-nowrap'>

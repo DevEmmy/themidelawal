@@ -40,6 +40,9 @@ module.exports = {
         'lg': { 'min': "2300px" },
         'xl': { 'max': "1280px" },
         "2xl": { 'max': "1536px" },
+        // non-overlapping laptop ranges (arbitrary min-/max- variants don't work with object screens)
+        'laptop': { 'min': "1281px", 'max': "1536px" },
+        'laptop-sm': { 'min': "801px", 'max': "1280px" },
       },
     },
   },

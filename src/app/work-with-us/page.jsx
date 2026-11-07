@@ -130,7 +130,7 @@ const page = () => {
       {/* Hero */}
       <div className="grid grid-cols-2 gap-24 md:gap-10 items-stretch md:grid-cols-none">
         {/* fills the first screen: viewport height minus the ~90px nav bar */}
-        <FitImage src="/./16.jpg" imgClassName="object-top" minHeight="min-h-[calc(100vh-90px)]" priority />
+        <FitImage src="/16.jpg" imgClassName="object-top" minHeight="min-h-[calc(100vh-90px)]" priority />
 
         <div className="md:text-center sm:px-xPadding md:px-[5%] md:pr-[5%] pr-[10%] py-[60px] md:py-0 flex flex-col justify-center">
           <Reveal as="h1" delay={0.2} y={36} duration={1.3} className="bigText text-[80px] md:text-[38px] leading-[92px] md:leading-[48px]">

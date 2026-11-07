@@ -72,7 +72,7 @@ const page = () => {
     <div className="bg-primary2 py-yPadding md:py-[40px] md:px-[5%] px-xPadding">
         <div className='max-w-[1280px] mx-auto'>
         <TwoWay fit>
-            <FitImage src="/./5.jpg" imgClassName="object-top" sizes="(max-width: 800px) 100vw, 640px" />
+            <FitImage src="/5.jpg" imgClassName="object-top" sizes="(max-width: 800px) 100vw, 640px" />
 
             <Reveal delay={0.2} className='flex flex-col gap-5 md:text-center'>
             <h2 className='bigText text-[48px] md:text-[38px]'>

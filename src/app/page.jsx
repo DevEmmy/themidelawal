@@ -44,7 +44,7 @@ export default function Home() {
 
       <div className="bg-primary2 mt-[64px] md:mt-[30px] py-[72px] md:py-[60px] px-xPadding md:text-center">
       <TwoWay fit>
-        <FitImage src="/./4.jpg" imgClassName="object-top" />
+        <FitImage src="/4.jpg" imgClassName="object-top" />
 
         <Reveal delay={0.2} className='flex flex-col gap-5'>
           <p className='uppercase tracking-[0.2em] text-[14px]'>
@@ -198,7 +198,7 @@ export default function Home() {
       {/* Founder (migrated from the old About page: "How it all began" + "This is me in a nutshell") */}
       <div id="founder" className="my-yPadding px-xPadding md:px-[5%] scroll-mt-6">
       <TwoWay fit>
-        <FitImage src="/./8.jpg" imgClassName="object-top" />
+        <FitImage src="/8.jpg" imgClassName="object-top" />
 
         <Reveal delay={0.2} className='flex flex-col gap-[16px] md:text-center max-w-[560px] md:max-w-none'>
           <p className='uppercase tracking-[0.2em] text-[14px]'>
@@ -228,11 +228,11 @@ export default function Home() {
       </TwoWay>
       </div>
 
-      <FunFacts />
+      {/* <FunFacts /> */}
 
       <div className='relative md:fs md:static fs'>
         <ImageReveal className='md:hidden'>
-          <Image src="/./mide-footer.jpg" alt="" className='w-full h-[500px] object-cover object-top' width={1000} height={1000} unoptimized/>
+          <Image src="/mide-footer.jpg" alt="" className='w-full h-[500px] object-cover object-top' width={1000} height={1000} unoptimized/>
         </ImageReveal>
 
         <Reveal delay={0.3} className="content absolute md:static bottom-28 left-[10%] text-white w-3/5 flex gap-[40px] flex-col md:gap-[32px]">
